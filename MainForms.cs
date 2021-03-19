@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ActividadesApostolica
 {
-    public partial class Form1 : Form
+    public partial class MainForms : Form
     {
-        public Form1()
+        public MainForms()
         {
             InitializeComponent();
         }
