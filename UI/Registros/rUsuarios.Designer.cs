@@ -163,6 +163,7 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoButton.TabIndex = 11;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -172,6 +173,7 @@ namespace ActividadesApostolica.UI.Registros
             this.GuardarButton.TabIndex = 12;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -181,6 +183,7 @@ namespace ActividadesApostolica.UI.Registros
             this.EliminarButton.TabIndex = 13;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // EmailTextBox
             // 

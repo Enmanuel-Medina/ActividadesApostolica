@@ -52,6 +52,28 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
+        private static bool Insertar(Usuarios usuarios)
+        {
+            bool paso = false;
+            var contexto = new Contexto();
+
+            try
+            {
+                contexto.Usuarios.Add(usuarios);
+                paso = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
+
         public static bool Eliminar(int id)
         {
             bool paso = false;

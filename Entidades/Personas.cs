@@ -11,7 +11,7 @@ namespace ActividadesApostolica.Entidades
     {
         [Key]
 
-        public int UsuarioId { get; set; }
+        public int PersonaId { get; set; }
 
         public DateTime Fecha { get; set; } = DateTime.Now;
 

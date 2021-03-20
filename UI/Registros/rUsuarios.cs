@@ -21,6 +21,7 @@ namespace ActividadesApostolica.UI.Registros
 
         private void Limpiar()
         {
+            MyErrorProvider.Clear();
             IdNumericUpDown.Value = 0;
             NombresTextBox.Text = String.Empty;
             ApellidosTextBox.Text = String.Empty;
@@ -31,12 +32,12 @@ namespace ActividadesApostolica.UI.Registros
             NombreUsuarioTextBox.Text = String.Empty;
             ClaveUsuarioTextBox.Text = String.Empty;
             ConfirmarClaveTextBox.Text = String.Empty;
-      
+            TipoUsuariosComboBox.Text = String.Empty;
         }
+
         private Usuarios LLenaClase()
         {
             Usuarios usuario = new Usuarios();
-
             usuario.UsuarioId = Convert.ToInt32(IdNumericUpDown.Value);
             usuario.Nombres = NombresTextBox.Text;
             usuario.Apellidos = ApellidosTextBox.Text;
@@ -47,14 +48,16 @@ namespace ActividadesApostolica.UI.Registros
             usuario.NombreUsuario = NombreUsuarioTextBox.Text;
             usuario.ClaveUsuario = ClaveUsuarioTextBox.Text;
             usuario.ClaveConfirmada = ConfirmarClaveTextBox.Text;
+            usuario.TipoUsuario = TipoUsuariosComboBox.Text;
             
             return usuario;
         }
+
         private void LLenaCampo(Usuarios usuario)
         {
             IdNumericUpDown.Value = usuario.UsuarioId;
-            NombreUsuarioTextBox.Text = usuario.Nombres;
-           ApellidosTextBox.Text = usuario.Apellidos;
+            NombresTextBox.Text = usuario.Nombres;
+            ApellidosTextBox.Text = usuario.Apellidos;
             TelefonoMaskedTextBox.Text = usuario.Telefono;
             CelularMaskedTextBox.Text = usuario.Celular;
             EmailTextBox.Text = usuario.Email;
@@ -62,18 +65,31 @@ namespace ActividadesApostolica.UI.Registros
             NombreUsuarioTextBox.Text = usuario.NombreUsuario;
             ClaveUsuarioTextBox.Text = usuario.ClaveUsuario;
             ConfirmarClaveTextBox.Text = usuario.ClaveConfirmada;
-
-            
-
+            TipoUsuariosComboBox.Text = usuario.TipoUsuario;
         }
+
         private bool Validar()
         {
             bool paso = true;
 
             if (string.IsNullOrWhiteSpace(NombresTextBox.Text))
             {
-                MyErrorProvider.SetError(NombresTextBox, "El campo Descripcion no puede estar vacio");
+                MyErrorProvider.SetError(NombresTextBox, "El campo Nombres no puede estar vacio");
                 NombresTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(ApellidosTextBox.Text))
+            {
+                MyErrorProvider.SetError(ApellidosTextBox, "El campo Apellidos no puede estar vacio");
+                ApellidosTextBox.Focus();
+                paso = false;
+            }
+
+            if (ConfirmarClaveTextBox != ClaveUsuarioTextBox)
+            {
+                MyErrorProvider.SetError(ConfirmarClaveTextBox, "Las claves no coinciden");
+                ConfirmarClaveTextBox.Focus();
                 paso = false;
             }
             return paso;
@@ -109,14 +125,14 @@ namespace ActividadesApostolica.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-            Usuarios roles;
+            Usuarios usuario;
 
             if (!Validar())
                 return;
-            roles = LLenaClase();
+            usuario = LLenaClase();
 
             if (IdNumericUpDown.Value == 0)
-                paso = UsuariosBLL.Guardar(roles);
+                paso = UsuariosBLL.Guardar(usuario);
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
@@ -124,7 +140,7 @@ namespace ActividadesApostolica.UI.Registros
                     MessageBox.Show("No se puede modificar un usuario ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = UsuariosBLL.Modificar(roles);
+                paso = UsuariosBLL.Modificar(usuario);
             }
 
             if (paso)
@@ -155,8 +171,6 @@ namespace ActividadesApostolica.UI.Registros
                 MessageBox.Show("No se puede eliminar el usuario que no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
 
