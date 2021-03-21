@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace ActividadesApostolica.BLL
 {
-    public class UsuariosBLL
+   public class ActividadesBLL
     {
-        public static bool Guardar(Usuarios usuario)
+        public static bool Guardar(Actividades actividad)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                if (db.Usuarios.Add(usuario) != null)
+                if (db.Actividades.Add(actividad) != null)
                     paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -32,13 +32,13 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        public static bool Modificar(Usuarios usuario)
+        public static bool Modificar(Actividades actividad)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(actividad).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -52,14 +52,14 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        private static bool Insertar(Usuarios usuarios)
+        private static bool Insertar(Actividades actividad)
         {
             bool paso = false;
             var contexto = new Contexto();
 
             try
             {
-                contexto.Usuarios.Add(usuarios);
+                contexto.Actividades.Add(actividad);
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -73,14 +73,14 @@ namespace ActividadesApostolica.BLL
 
             return paso;
         }
-        
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                var eliminar = db.Usuarios.Find(id);
+                var eliminar = db.Actividades.Find(id);
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = db.SaveChanges() > 0;
             }
@@ -95,13 +95,13 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        public static Usuarios Buscar(int id)
+        public static Actividades Buscar(int id)
         {
             Contexto db = new Contexto();
-            Usuarios usuario = new Usuarios();
+            Actividades actividad = new Actividades();
             try
             {
-                usuario = db.Usuarios.Find(id);
+                actividad = db.Actividades.Find(id);
             }
             catch (Exception)
             {
@@ -111,16 +111,16 @@ namespace ActividadesApostolica.BLL
             {
                 db.Dispose();
             }
-            return usuario;
+            return actividad;
         }
 
-        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> evaluacion)
+        public static List<Actividades> GetList(Expression<Func<Actividades, bool>> evaluacion)
         {
-            var lista = new List<Usuarios>();
+            var lista = new List<Actividades>();
             var db = new Contexto();
             try
             {
-                lista = db.Usuarios.Where(evaluacion).ToList();
+                lista = db.Actividades.Where(evaluacion).ToList();
             }
             catch (Exception)
             {
@@ -133,5 +133,6 @@ namespace ActividadesApostolica.BLL
             return lista;
         }
     }
+
 }
 

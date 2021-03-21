@@ -32,6 +32,7 @@ namespace ActividadesApostolica
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.RegistroStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsuariosStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ActividadesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@ namespace ActividadesApostolica
             // RegistroStripMenuItem
             // 
             this.RegistroStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UsuariosStripMenuItem});
+            this.UsuariosStripMenuItem,
+            this.ActividadesStripMenuItem});
             this.RegistroStripMenuItem.Name = "RegistroStripMenuItem";
             this.RegistroStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.RegistroStripMenuItem.Text = "&Registros";
@@ -60,8 +62,14 @@ namespace ActividadesApostolica
             // UsuariosStripMenuItem
             // 
             this.UsuariosStripMenuItem.Name = "UsuariosStripMenuItem";
-            this.UsuariosStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.UsuariosStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.UsuariosStripMenuItem.Text = "Usuarios";
+            // 
+            // ActividadesStripMenuItem
+            // 
+            this.ActividadesStripMenuItem.Name = "ActividadesStripMenuItem";
+            this.ActividadesStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.ActividadesStripMenuItem.Text = "Actividades";
             // 
             // MainForms
             // 
@@ -86,5 +94,6 @@ namespace ActividadesApostolica
         private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem RegistroStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UsuariosStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ActividadesStripMenuItem;
     }
 }

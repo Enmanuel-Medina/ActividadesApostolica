@@ -11,6 +11,7 @@ namespace ActividadesApostolica.DAL
     public class Contexto : DbContext
     {
         public DbSet<Usuarios> Usuarios { set; get; }
+        public DbSet<Actividades> Actividades { set; get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
