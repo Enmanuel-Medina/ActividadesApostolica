@@ -52,7 +52,7 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        private static bool Insertar(Usuarios usuarios)
+        /*private static bool Insertar(Usuarios usuarios)
         {
             bool paso = false;
             var contexto = new Contexto();
@@ -73,7 +73,7 @@ namespace ActividadesApostolica.BLL
 
             return paso;
         }
-
+        */
         public static bool Eliminar(int id)
         {
             bool paso = false;

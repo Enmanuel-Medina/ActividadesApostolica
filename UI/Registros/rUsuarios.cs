@@ -86,7 +86,42 @@ namespace ActividadesApostolica.UI.Registros
                 paso = false;
             }
 
-            if (ConfirmarClaveTextBox != ClaveUsuarioTextBox)
+            if (string.IsNullOrWhiteSpace(TelefonoMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(TelefonoMaskedTextBox, "El campo Telefono no puede estar vacio");
+                TelefonoMaskedTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(CelularMaskedTextBox.Text))
+            {
+                MyErrorProvider.SetError(CelularMaskedTextBox, "El campo Celular no puede estar vacio");
+                CelularMaskedTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(EmailTextBox.Text))
+            {
+                MyErrorProvider.SetError(EmailTextBox, "El campo Email no puede estar vacio");
+                EmailTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(DireccionTextBox.Text))
+            {
+                MyErrorProvider.SetError(DireccionTextBox, "El campo Direccion no puede estar vacio");
+                DireccionTextBox.Focus();
+                paso = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(NombreUsuarioTextBox.Text))
+            {
+                MyErrorProvider.SetError(NombreUsuarioTextBox, "El campo Nobre Usuario no puede estar vacio");
+                NombreUsuarioTextBox.Focus();
+                paso = false;
+            }
+
+            if (ConfirmarClaveTextBox.Text != ClaveUsuarioTextBox.Text)
             {
                 MyErrorProvider.SetError(ConfirmarClaveTextBox, "Las claves no coinciden");
                 ConfirmarClaveTextBox.Focus();
