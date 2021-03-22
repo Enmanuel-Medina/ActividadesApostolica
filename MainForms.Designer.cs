@@ -34,6 +34,7 @@ namespace ActividadesApostolica
             this.UsuariosStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActividadesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AsistenciaStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PersonasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@ namespace ActividadesApostolica
             this.RegistroStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UsuariosStripMenuItem,
             this.ActividadesStripMenuItem,
-            this.AsistenciaStripMenuItem});
+            this.AsistenciaStripMenuItem,
+            this.PersonasStripMenuItem});
             this.RegistroStripMenuItem.Name = "RegistroStripMenuItem";
             this.RegistroStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.RegistroStripMenuItem.Text = "&Registros";
@@ -78,6 +80,12 @@ namespace ActividadesApostolica
             this.AsistenciaStripMenuItem.Name = "AsistenciaStripMenuItem";
             this.AsistenciaStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.AsistenciaStripMenuItem.Text = "Asistencias";
+            // 
+            // PersonasStripMenuItem
+            // 
+            this.PersonasStripMenuItem.Name = "PersonasStripMenuItem";
+            this.PersonasStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.PersonasStripMenuItem.Text = "Personas";
             // 
             // MainForms
             // 
@@ -104,5 +112,6 @@ namespace ActividadesApostolica
         private System.Windows.Forms.ToolStripMenuItem UsuariosStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ActividadesStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AsistenciaStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PersonasStripMenuItem;
     }
 }

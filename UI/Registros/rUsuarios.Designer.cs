@@ -203,6 +203,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             this.ClaveUsuarioTextBox.Location = new System.Drawing.Point(57, 476);
             this.ClaveUsuarioTextBox.Name = "ClaveUsuarioTextBox";
+            this.ClaveUsuarioTextBox.PasswordChar = '*';
             this.ClaveUsuarioTextBox.Size = new System.Drawing.Size(276, 27);
             this.ClaveUsuarioTextBox.TabIndex = 16;
             // 
@@ -283,6 +284,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             this.ConfirmarClaveTextBox.Location = new System.Drawing.Point(352, 476);
             this.ConfirmarClaveTextBox.Name = "ConfirmarClaveTextBox";
+            this.ConfirmarClaveTextBox.PasswordChar = '*';
             this.ConfirmarClaveTextBox.Size = new System.Drawing.Size(278, 27);
             this.ConfirmarClaveTextBox.TabIndex = 26;
             // 

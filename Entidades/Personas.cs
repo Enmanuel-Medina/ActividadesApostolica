@@ -27,7 +27,7 @@ namespace ActividadesApostolica.Entidades
 
         public string Direccion { get; set; }
 
-        public int Cedula { get; set; }
+        public string Cedula { get; set; }
 
 
 

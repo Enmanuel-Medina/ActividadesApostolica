@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ActividadesApostolica.Entidades
 {
     public  class Usuarios
+
     {
         [Key]
 
