@@ -63,9 +63,29 @@ namespace ActividadesApostolica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apostolica {
+            get {
+                object obj = ResourceManager.GetObject("apostolica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pentecostes_2 {
+            get {
+                object obj = ResourceManager.GetObject("Pentecostes-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

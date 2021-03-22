@@ -26,10 +26,10 @@ namespace ActividadesApostolica
             this.ActividadesStripMenuItem.Click += new EventHandler(this.ActividadesStripMenuItem_ItemClicked);
 
             //Asistencias
-           // this.AsistenciaStripMenuItem.Click += new EventHandler(this.AsistenciaStripMenuItem_ItemClicked);
+            this.AsistenciaStripMenuItem.Click += new EventHandler(this.AsistenciaStripMenuItem_ItemClicked);
 
             //Personas
-           // this.PersonasStripMenuItem.Click += new EventHandler(this.PersonasStripMenuItem_ItemCliked);
+            this.PersonasStripMenuItem.Click += new EventHandler(this.PersonasStripMenuItem_ItemCliked);
 
         }
 
@@ -51,14 +51,14 @@ namespace ActividadesApostolica
             actividad.Show();
         }
 
-        private void AsistenciaStripMenuItem_ItemClicked(object sender, EventHandler e)
+        private void AsistenciaStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
             var asistencias = new rAsistencias();
             asistencias.MdiParent = this;
             asistencias.Show();
         }
 
-        private void PersonasStripMenuItem_ItemCliked(object sender, EventHandler e)
+        private void PersonasStripMenuItem_ItemCliked(object sender, EventArgs e)
         {
             var personas = new rPersonas();
             personas.MdiParent = this;

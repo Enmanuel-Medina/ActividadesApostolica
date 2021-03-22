@@ -210,7 +210,7 @@ namespace ActividadesApostolica.UI.Registros
             this.ApellidosTextBox.Name = "ApellidosTextBox";
             this.ApellidosTextBox.Size = new System.Drawing.Size(652, 27);
             this.ApellidosTextBox.TabIndex = 32;
-            // 
+          
             // NombresTextBox
             // 
             this.NombresTextBox.Location = new System.Drawing.Point(14, 139);

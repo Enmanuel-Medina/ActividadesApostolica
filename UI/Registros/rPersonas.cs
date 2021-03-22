@@ -38,6 +38,11 @@ namespace ActividadesApostolica.UI.Registros
             Personas personas = new Personas();
             personas.PersonaId = Convert.ToInt32(IdNumericUpDown.Value);
             personas.Nombres = NombresTextBox.Text;
+            personas.Apellidos = ApellidosTextBox.Text;
+            personas.Telefono = TelefonoMaskedTextBox.Text;
+            personas.Celular = CedulaMaskedTextBox.Text;
+            personas.Email = EmailTextBox.Text;
+            personas.Direccion = DireccionTextBox.Text;
             personas.Cedula = CedulaMaskedTextBox.Text;
 
             return personas;
@@ -194,6 +199,8 @@ namespace ActividadesApostolica.UI.Registros
                 MessageBox.Show("No se puede eliminar el usuario que no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
     
 }
