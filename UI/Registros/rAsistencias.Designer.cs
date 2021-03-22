@@ -40,7 +40,12 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
+            this.Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Presente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Ausente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Excusa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RemoverFilaButton = new System.Windows.Forms.Button();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.ExcusasTextBox = new System.Windows.Forms.TextBox();
             this.AusentesTextBox = new System.Windows.Forms.TextBox();
@@ -55,11 +60,6 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.RemoverFilaButton = new System.Windows.Forms.Button();
-            this.Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Presente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ausente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Excusa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -162,6 +162,7 @@
             // 
             // DetalleDataGridView
             // 
+            this.DetalleDataGridView.AllowUserToAddRows = false;
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Persona,
@@ -176,6 +177,40 @@
             this.DetalleDataGridView.TabIndex = 12;
             this.DetalleDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellClick);
             this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
+            // 
+            // Persona
+            // 
+            this.Persona.HeaderText = "Persona";
+            this.Persona.MinimumWidth = 6;
+            this.Persona.Name = "Persona";
+            this.Persona.Width = 125;
+            // 
+            // Presente
+            // 
+            this.Presente.HeaderText = "Presente";
+            this.Presente.MinimumWidth = 6;
+            this.Presente.Name = "Presente";
+            this.Presente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Presente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Presente.Width = 125;
+            // 
+            // Ausente
+            // 
+            this.Ausente.HeaderText = "Ausente";
+            this.Ausente.MinimumWidth = 6;
+            this.Ausente.Name = "Ausente";
+            this.Ausente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Ausente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Ausente.Width = 125;
+            // 
+            // Excusa
+            // 
+            this.Excusa.HeaderText = "Excusa";
+            this.Excusa.MinimumWidth = 6;
+            this.Excusa.Name = "Excusa";
+            this.Excusa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Excusa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Excusa.Width = 125;
             // 
             // groupBox1
             // 
@@ -200,6 +235,16 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asistencias";
+            // 
+            // RemoverFilaButton
+            // 
+            this.RemoverFilaButton.Location = new System.Drawing.Point(6, 340);
+            this.RemoverFilaButton.Name = "RemoverFilaButton";
+            this.RemoverFilaButton.Size = new System.Drawing.Size(129, 29);
+            this.RemoverFilaButton.TabIndex = 0;
+            this.RemoverFilaButton.Text = "Remover fila";
+            this.RemoverFilaButton.UseVisualStyleBackColor = true;
+            this.RemoverFilaButton.Click += new System.EventHandler(this.RemoverFilaButton_Click);
             // 
             // TotalTextBox
             // 
@@ -326,44 +371,6 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // RemoverFilaButton
-            // 
-            this.RemoverFilaButton.Location = new System.Drawing.Point(6, 340);
-            this.RemoverFilaButton.Name = "RemoverFilaButton";
-            this.RemoverFilaButton.Size = new System.Drawing.Size(129, 29);
-            this.RemoverFilaButton.TabIndex = 0;
-            this.RemoverFilaButton.Text = "Remover fila";
-            this.RemoverFilaButton.UseVisualStyleBackColor = true;
-            this.RemoverFilaButton.Click += new System.EventHandler(this.RemoverFilaButton_Click);
-            // 
-            // Persona
-            // 
-            this.Persona.HeaderText = "Persona";
-            this.Persona.MinimumWidth = 6;
-            this.Persona.Name = "Persona";
-            this.Persona.Width = 125;
-            // 
-            // Presente
-            // 
-            this.Presente.HeaderText = "Presente";
-            this.Presente.MinimumWidth = 6;
-            this.Presente.Name = "Presente";
-            this.Presente.Width = 125;
-            // 
-            // Ausente
-            // 
-            this.Ausente.HeaderText = "Ausente";
-            this.Ausente.MinimumWidth = 6;
-            this.Ausente.Name = "Ausente";
-            this.Ausente.Width = 125;
-            // 
-            // Excusa
-            // 
-            this.Excusa.HeaderText = "Excusa";
-            this.Excusa.MinimumWidth = 6;
-            this.Excusa.Name = "Excusa";
-            this.Excusa.Width = 125;
-            // 
             // rAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -425,8 +432,8 @@
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.Button RemoverFilaButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Persona;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Presente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ausente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Excusa;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Presente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Ausente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Excusa;
     }
 }

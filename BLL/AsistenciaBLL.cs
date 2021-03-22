@@ -83,7 +83,7 @@ namespace ActividadesApostolica.BLL
 
             try
             {
-                contexto.Database.ExecuteSqlRaw($"DELETE FROM AsistenciasDetalle WHERE ProyectoId = {asistencia.AsistenciaId}");
+                contexto.Database.ExecuteSqlRaw($"DELETE FROM AsistenciasDetalle WHERE AsistenciaId = {asistencia.AsistenciaId}");
 
                 int presente = 0;
                 int ausentes = 0;
