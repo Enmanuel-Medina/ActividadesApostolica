@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ActividadesApostolica.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210319235153_Inicial")]
+    [Migration("20210321210935_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,6 +17,20 @@ namespace ActividadesApostolica.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.4");
+
+            modelBuilder.Entity("ActividadesApostolica.Entidades.Actividades", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Actividades");
+                });
 
             modelBuilder.Entity("ActividadesApostolica.Entidades.Usuarios", b =>
                 {
@@ -71,7 +85,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 19, 19, 51, 52, 665, DateTimeKind.Local).AddTicks(4325),
+                            Fecha = new DateTime(2021, 3, 21, 17, 9, 35, 356, DateTimeKind.Local).AddTicks(5359),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

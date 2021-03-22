@@ -16,6 +16,20 @@ namespace ActividadesApostolica.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.4");
 
+            modelBuilder.Entity("ActividadesApostolica.Entidades.Actividades", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Actividades");
+                });
+
             modelBuilder.Entity("ActividadesApostolica.Entidades.Usuarios", b =>
                 {
                     b.Property<int>("UsuarioId")
@@ -69,7 +83,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 19, 19, 51, 52, 665, DateTimeKind.Local).AddTicks(4325),
+                            Fecha = new DateTime(2021, 3, 21, 17, 9, 35, 356, DateTimeKind.Local).AddTicks(5359),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

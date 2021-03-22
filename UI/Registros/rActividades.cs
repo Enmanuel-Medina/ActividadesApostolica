@@ -29,14 +29,14 @@ namespace ActividadesApostolica.UI.Registros
         private Actividades LLenaClase()
         {
             Actividades actividad = new Actividades();
-            actividad.Id = Convert.ToInt32(NumericUpDown.Value);
+            actividad.ActividadId = Convert.ToInt32(NumericUpDown.Value);
             actividad.Descripcion = DescriccionTextBox.Text;
             return actividad;
         }
 
         private void LLenaCampo(Actividades actividad)
         {
-            NumericUpDown.Value = actividad.Id;
+            NumericUpDown.Value = actividad.ActividadId;
             DescriccionTextBox.Text = actividad.Descripcion;
             
         }

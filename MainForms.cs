@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace ActividadesApostolica
 {
     public partial class MainForms : Form
@@ -15,12 +17,20 @@ namespace ActividadesApostolica
         {
             InitializeComponent();
 
+
+
             //Registros
             this.UsuariosStripMenuItem.Click += new EventHandler(this.UsuariosStripMenuItem_ItemClicked);
 
             //Actividades
             this.ActividadesStripMenuItem.Click += new EventHandler(this.ActividadesStripMenuItem_ItemClicked);
+
+            //Asistencias
+            this.AsistenciaStripMenuItem.Click += new EventHandler(this.AsistenciaStripMenuItem_ItemClicked);
+           
         }
+
+
 
         private void UsuariosStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
@@ -29,17 +39,28 @@ namespace ActividadesApostolica
             usuario.Show();
         }
 
-       private void ActividadesStripMenu_ItemClicked(object sender, EventHandler e)
+
+
+        private void ActividadesStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
             var actividad = new rActividades();
             actividad.MdiParent = this;
             actividad.Show();
-
         }
+
+        private void AsistenciaStripMenuItem_ItemClicked(object sender, EventHandler e)
+        {
+            var asistencias = new rActividades();
+            asistencias.MdiParent = this;
+            asistencias.Show();
+        }
+
 
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+
+
 
         }
     }

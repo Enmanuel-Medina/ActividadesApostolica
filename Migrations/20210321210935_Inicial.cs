@@ -8,6 +8,19 @@ namespace ActividadesApostolica.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Actividades",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Actividades", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -33,11 +46,14 @@ namespace ActividadesApostolica.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Celular", "ClaveConfirmada", "ClaveUsuario", "Direccion", "Email", "Fecha", "NombreUsuario", "Nombres", "Telefono", "TipoUsuario" },
-                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 19, 19, 51, 52, 665, DateTimeKind.Local).AddTicks(4325), "Admin", "Admin", "0123456789", "Administrador" });
+                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 21, 17, 9, 35, 356, DateTimeKind.Local).AddTicks(5359), "Admin", "Admin", "0123456789", "Administrador" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Actividades");
+
             migrationBuilder.DropTable(
                 name: "Usuarios");
         }

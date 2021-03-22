@@ -33,6 +33,7 @@ namespace ActividadesApostolica
             this.RegistroStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsuariosStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActividadesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AsistenciaStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@ namespace ActividadesApostolica
             // 
             this.RegistroStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.UsuariosStripMenuItem,
-            this.ActividadesStripMenuItem});
+            this.ActividadesStripMenuItem,
+            this.AsistenciaStripMenuItem});
             this.RegistroStripMenuItem.Name = "RegistroStripMenuItem";
             this.RegistroStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.RegistroStripMenuItem.Text = "&Registros";
@@ -70,6 +72,12 @@ namespace ActividadesApostolica
             this.ActividadesStripMenuItem.Name = "ActividadesStripMenuItem";
             this.ActividadesStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.ActividadesStripMenuItem.Text = "Actividades";
+            // 
+            // AsistenciaStripMenuItem
+            // 
+            this.AsistenciaStripMenuItem.Name = "AsistenciaStripMenuItem";
+            this.AsistenciaStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.AsistenciaStripMenuItem.Text = "Asistencias";
             // 
             // MainForms
             // 
@@ -95,5 +103,6 @@ namespace ActividadesApostolica
         private System.Windows.Forms.ToolStripMenuItem RegistroStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UsuariosStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ActividadesStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AsistenciaStripMenuItem;
     }
 }

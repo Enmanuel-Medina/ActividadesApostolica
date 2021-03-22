@@ -10,7 +10,9 @@ namespace ActividadesApostolica.Entidades
    public class Actividades
     {
         [Key]
-        public int Id { get; set; }
+
+        public int ActividadId { get; set; }
+
         public string Descripcion { get; set; }
     }
 }
