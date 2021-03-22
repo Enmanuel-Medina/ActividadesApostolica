@@ -12,6 +12,36 @@ namespace ActividadesApostolica.BLL
 {
     public class AsistenciasBLL
     {
+        public static void AgregarAsistencia(Asistencias asistencia)
+        {
+            foreach (var item in asistencia.AsistenciasDetalle)
+            {
+                if (item.Presente == true)
+                    asistencia.CantidadPresentes++;
+
+                if (item.Ausente == true)
+                    asistencia.CantidadAusentes++;
+
+                if (item.Excusa == true)
+                    asistencia.CantidadExcusas++;
+            }
+        }
+
+        public static void EliminarAsistencia(Asistencias asistencia)
+        {
+            foreach (var item in asistencia.AsistenciasDetalle)
+            {
+                if (item.Presente == true)
+                    asistencia.CantidadPresentes--;
+
+                if (item.Ausente == true)
+                    asistencia.CantidadAusentes--;
+
+                if (item.Excusa == true)
+                    asistencia.CantidadExcusas--;
+            }
+        }
+
         public static bool Existe(int id)
         {
             bool encontrado = false;
@@ -35,34 +65,23 @@ namespace ActividadesApostolica.BLL
 
         public static bool Guardar(Asistencias asistencia)
         {
+            if (!Existe(asistencia.AsistenciaId))
+                return Insertar(asistencia);
+            else
+                return Modificar(asistencia);
+        }
+
+        private static bool Insertar(Asistencias asistencia)
+        {
             bool paso = false;
             var contexto = new Contexto();
 
-            int presente = 0;
-            int ausentes = 0;
-            int excusas = 0;
-
             try
             {
-                foreach (var item in asistencia.AsistenciasDetalle)
-                {
-                    if (item.Presente)
-                        presente += 1;
-
-                    if (item.Ausente)
-                        ausentes += 1;
-
-                    if (item.Excusa)
-                        excusas += 1;
-                }
-
-                asistencia.CantidadAusentes = ausentes;
-                asistencia.CantidadExcusas = excusas;
-                asistencia.CantidadPresentes = presente;
-
                 contexto.Asistencias.Add(asistencia);
-                paso = contexto.SaveChanges() > 0;
+                AgregarAsistencia(asistencia);
 
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -76,36 +95,24 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        public static bool Modificar(Asistencias asistencia)
+        private static bool Modificar(Asistencias asistencia)
         {
             bool paso = false;
             var contexto = new Contexto();
+            Asistencias asistenciaAnterior = new Asistencias();
+            asistenciaAnterior = Buscar(asistencia.AsistenciaId);
 
             try
             {
+                EliminarAsistencia(asistenciaAnterior);
                 contexto.Database.ExecuteSqlRaw($"DELETE FROM AsistenciasDetalle WHERE AsistenciaId = {asistencia.AsistenciaId}");
-
-                int presente = 0;
-                int ausentes = 0;
-                int excusas = 0;
 
                 foreach (var anterior in asistencia.AsistenciasDetalle)
                 {
                     contexto.Entry(anterior).State = EntityState.Added;
-
-                    if (anterior.Presente)
-                        presente += 1;
-
-                    if (anterior.Ausente)
-                        ausentes += 1;
-
-                    if (anterior.Excusa)
-                        excusas += 1;
                 }
 
-                asistencia.CantidadAusentes = ausentes;
-                asistencia.CantidadExcusas = excusas;
-                asistencia.CantidadPresentes = presente;
+                AgregarAsistencia(asistencia);
 
                 contexto.Entry(asistencia).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
@@ -129,7 +136,10 @@ namespace ActividadesApostolica.BLL
 
             try
             {
-                asistencia = contexto.Asistencias.Include(x => x.AsistenciasDetalle).Where(p => p.AsistenciaId == id).SingleOrDefault();
+                asistencia = contexto.Asistencias
+                    .Where(e => e.AsistenciaId == id)
+                    .Include(e => e.AsistenciasDetalle)
+                    .FirstOrDefault();
             }
             catch (Exception)
             {
@@ -147,13 +157,19 @@ namespace ActividadesApostolica.BLL
         {
             bool paso = false;
             var contexto = new Contexto();
+            Asistencias asistencia = Buscar(id);
 
             try
             {
-                var eliminarProyecto = contexto.Asistencias.Find(id);
-                contexto.Entry(eliminarProyecto).State = EntityState.Deleted;
+                if (asistencia != null)
+                {
+                    EliminarAsistencia(asistencia);
 
-                paso = contexto.SaveChanges() > 0;
+                    var eliminarProyecto = contexto.Asistencias.Find(id);
+                    contexto.Entry(eliminarProyecto).State = EntityState.Deleted;
+
+                    paso = contexto.SaveChanges() > 0;
+                }
             }
             catch (Exception)
             {

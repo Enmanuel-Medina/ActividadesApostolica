@@ -19,6 +19,7 @@ namespace ActividadesApostolica.UI.Registros
         public rAsistencias()
         {
             InitializeComponent();
+            Limpiar();
             this.Detalle = new List<AsistenciasDetalle>();
         }
 
@@ -31,6 +32,7 @@ namespace ActividadesApostolica.UI.Registros
             FechaDateTimePicker.Value = DateTime.Now;
             PresentesTextBox.Text = "0";
             AusentesTextBox.Text = "0";
+            ExcusasTextBox.Text = "0";
             TotalTextBox.Text = "0";
 
             this.Detalle = new List<AsistenciasDetalle>();
@@ -42,11 +44,9 @@ namespace ActividadesApostolica.UI.Registros
             Asistencias asistencia = new Asistencias();
 
             asistencia.AsistenciaId = Convert.ToInt32(IdNumericUpDown.Value);
-            asistencia.ActividadId = Convert.ToInt32(ActividadComboBox.SelectedIndex);
-            asistencia.PersonaId = Convert.ToInt32(PersonaComboBox.SelectedIndex);
+            asistencia.ActividadId = Convert.ToInt32(ActividadComboBox.SelectedValue);
+            asistencia.PersonaId = Convert.ToInt32(PersonaComboBox.SelectedValue);
             asistencia.Fecha = FechaDateTimePicker.Value;
-            asistencia.CantidadPresentes = Convert.ToInt32(PresentesTextBox.Text);
-            asistencia.CantidadAusentes = Convert.ToInt32(AusentesTextBox.Text);
             asistencia.AsistenciasDetalle = this.Detalle;
 
             return asistencia;
@@ -55,32 +55,26 @@ namespace ActividadesApostolica.UI.Registros
         public void LlenaCampo(Asistencias asistencia)
         {
             IdNumericUpDown.Value = asistencia.AsistenciaId;
-            ActividadComboBox.SelectedItem = asistencia.ActividadId;
-            PersonaComboBox.SelectedItem = asistencia.PersonaId;
+            ActividadComboBox.SelectedValue = asistencia.ActividadId;
+            PersonaComboBox.SelectedValue = asistencia.PersonaId;
             FechaDateTimePicker.Value = asistencia.Fecha;
             PresentesTextBox.Text = Convert.ToString(asistencia.CantidadPresentes);
             AusentesTextBox.Text = Convert.ToString(asistencia.CantidadAusentes);
-            TotalTextBox.Text = Convert.ToString(DetalleDataGridView.Rows.Count);
+            ExcusasTextBox.Text = Convert.ToString(asistencia.CantidadExcusas);
 
             this.Detalle = asistencia.AsistenciasDetalle;
             CargarGrid();
-        }
-
-        private bool ExisteEnLaBaseDeDatos()
-        {
-            Asistencias asistencia = AsistenciasBLL.Buscar((int)IdNumericUpDown.Value);
-
-            return (asistencia != null);
+            TotalTextBox.Text = Convert.ToString(DetalleDataGridView.Rows.Count);
         }
 
         private void ActividadComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LlenarComboActividades();
+            PersonaComboBox.ResetText();
         }
 
         private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LlenarComboPersonas();
+            PersonaComboBox.ResetText();
         }
 
         private void LlenarComboActividades()
@@ -122,10 +116,11 @@ namespace ActividadesApostolica.UI.Registros
 
             this.Detalle.Add(
                 new AsistenciasDetalle(
-                    personaId: Convert.ToInt32(ActividadComboBox.SelectedIndex + 1),
-                    actividadId: Convert.ToInt32(ActividadComboBox.SelectedIndex + 1),
+                    id: 0,
+                    personaId: Convert.ToInt32(PersonaComboBox.SelectedValue),
+                    asistencia: Convert.ToInt32(ActividadComboBox.SelectedValue),
                     presente: false,
-                    ausente: true,
+                    ausente: false,
                     excusa: false
                     )
                 );
@@ -151,7 +146,6 @@ namespace ActividadesApostolica.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             bool paso = false;
-
             int indice = 0;
 
             //if (!Validar())
@@ -175,31 +169,19 @@ namespace ActividadesApostolica.UI.Registros
                     objeto.Excusa = (bool)checkExcusa;
                 }
 
-                indice += 1;
+                indice++;
             }
 
             Asistencias asistencia = LlenaClase();
-
-            if (IdNumericUpDown.Value == 0)
-                paso = AsistenciasBLL.Guardar(asistencia);
-            else
-            {
-                if (!ExisteEnLaBaseDeDatos())
-                {
-                    MessageBox.Show("No se encuentra la asistencia en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                paso = AsistenciasBLL.Modificar(asistencia);
-            }
+            paso = AsistenciasBLL.Guardar(asistencia);
 
             if (paso)
             {
                 Limpiar();
-                MessageBox.Show("Guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se guardo con exito", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("No se pudo guardar la asistencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha podido guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
@@ -213,20 +195,24 @@ namespace ActividadesApostolica.UI.Registros
                 Limpiar();
             }
             else
-                MessageBox.Show(" No ha sido eliminado", "Error Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha podido eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             var asistencia = new Asistencias();
+
             int id = (int)IdNumericUpDown.Value;
 
             Limpiar();
             asistencia = AsistenciasBLL.Buscar(id);
             if (asistencia != null)
+            {
                 LlenaCampo(asistencia);
+                ActividadComboBox.Text = ActividadesBLL.Buscar(asistencia.ActividadId).Descripcion;
+            }
             else
-                MessageBox.Show("No se a podido encontrar el proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha podido encontrar la asistencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void DetalleDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -235,11 +221,13 @@ namespace ActividadesApostolica.UI.Registros
             {
                 if (e.ColumnIndex == 1)
                 {
+                    var checkPresente = DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value;
                     var checkAusente = DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value;
                     var checkExcusa = DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value;
 
-                    if ((bool)checkAusente == true || (bool)checkExcusa == true)
+                    if ((bool)checkPresente == true || (bool)checkAusente == true || (bool)checkExcusa == true)
                     {
+                        DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value = false;
                         DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value = false;
                         DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value = false;
                     }
@@ -247,25 +235,29 @@ namespace ActividadesApostolica.UI.Registros
 
                 if (e.ColumnIndex == 2)
                 {
-                    var checkAusente = DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                    var checkPresente = DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                    var checkAusente = DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value;
                     var checkExcusa = DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value;
 
-                    if ((bool)checkAusente == true || (bool)checkExcusa == true)
+                    if ((bool)checkPresente == true || (bool)checkAusente == true || (bool)checkExcusa == true)
                     {
                         DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value = false;
+                        DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value = false;
                         DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value = false;
                     }
                 }
 
                 if (e.ColumnIndex == 3)
                 {
-                    var checkAusente = DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value;
-                    var checkExcusa = DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value;
+                    var checkPresente = DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value;
+                    var checkAusente = DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value;
+                    var checkExcusa = DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value;
 
-                    if ((bool)checkAusente == true || (bool)checkExcusa == true)
+                    if ((bool)checkPresente == true || (bool)checkAusente == true || (bool)checkExcusa == true)
                     {
                         DetalleDataGridView.Rows[e.RowIndex].Cells[1].Value = false;
                         DetalleDataGridView.Rows[e.RowIndex].Cells[2].Value = false;
+                        DetalleDataGridView.Rows[e.RowIndex].Cells[3].Value = false;
                     }
                 }
             }
@@ -273,7 +265,7 @@ namespace ActividadesApostolica.UI.Registros
 
         private void DetalleDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int presente = 0;
+            /*int presente = 0;
             int ausente = 0;
             int excusa = 0;
 
@@ -291,7 +283,7 @@ namespace ActividadesApostolica.UI.Registros
 
             PresentesTextBox.Text = Convert.ToString(presente);
             AusentesTextBox.Text = Convert.ToString(ausente);
-            ExcusasTextBox.Text = Convert.ToString(excusa);
+            ExcusasTextBox.Text = Convert.ToString(excusa);*/
         }
     }
 }

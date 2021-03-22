@@ -86,10 +86,10 @@ namespace ActividadesApostolica.Migrations
                 name: "AsistenciasDetalle",
                 columns: table => new
                 {
-                    AsistenciaId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    AsistenciaId = table.Column<int>(type: "INTEGER", nullable: false),
                     PersonaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ActividadId = table.Column<int>(type: "INTEGER", nullable: false),
                     Presente = table.Column<bool>(type: "INTEGER", nullable: false),
                     Ausente = table.Column<bool>(type: "INTEGER", nullable: false),
                     Excusa = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -97,7 +97,7 @@ namespace ActividadesApostolica.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AsistenciasDetalle", x => x.AsistenciaId);
+                    table.PrimaryKey("PK_AsistenciasDetalle", x => x.Id);
                     table.ForeignKey(
                         name: "FK_AsistenciasDetalle_Asistencias_AsistenciasAsistenciaId",
                         column: x => x.AsistenciasAsistenciaId,
@@ -109,7 +109,7 @@ namespace ActividadesApostolica.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Celular", "ClaveConfirmada", "ClaveUsuario", "Direccion", "Email", "Fecha", "NombreUsuario", "Nombres", "Telefono", "TipoUsuario" },
-                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 22, 16, 59, 57, 787, DateTimeKind.Local).AddTicks(1254), "Admin", "Admin", "0123456789", "Administrador" });
+                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 22, 19, 27, 21, 666, DateTimeKind.Local).AddTicks(4400), "Admin", "Admin", "0123456789", "Administrador" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AsistenciasDetalle_AsistenciasAsistenciaId",
