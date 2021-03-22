@@ -64,11 +64,11 @@ namespace ActividadesApostolica.Migrations
 
             modelBuilder.Entity("ActividadesApostolica.Entidades.AsistenciasDetalle", b =>
                 {
-                    b.Property<int>("PersonaId")
+                    b.Property<int>("AsistenciaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AsistenciaId")
+                    b.Property<int>("ActividadId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("AsistenciasAsistenciaId")
@@ -80,13 +80,13 @@ namespace ActividadesApostolica.Migrations
                     b.Property<bool>("Excusa")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Nombre")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("PersonaId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("Presente")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("PersonaId");
+                    b.HasKey("AsistenciaId");
 
                     b.HasIndex("AsistenciasAsistenciaId");
 
@@ -181,7 +181,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 22, 12, 26, 23, 165, DateTimeKind.Local).AddTicks(3536),
+                            Fecha = new DateTime(2021, 3, 22, 14, 43, 6, 792, DateTimeKind.Local).AddTicks(3598),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

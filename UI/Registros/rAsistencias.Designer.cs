@@ -55,6 +55,11 @@
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RemoverFilaButton = new System.Windows.Forms.Button();
+            this.Persona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Presente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ausente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Excusa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,30 +122,33 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(523, 701);
+            this.EliminarButton.Location = new System.Drawing.Point(523, 732);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(94, 29);
             this.EliminarButton.TabIndex = 11;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
-            this.GuardarButton.Location = new System.Drawing.Point(423, 701);
+            this.GuardarButton.Location = new System.Drawing.Point(423, 732);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(94, 29);
             this.GuardarButton.TabIndex = 10;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(323, 701);
+            this.NuevoButton.Location = new System.Drawing.Point(323, 732);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(94, 29);
             this.NuevoButton.TabIndex = 9;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
@@ -150,19 +158,28 @@
             this.BuscarButton.TabIndex = 8;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // DetalleDataGridView
             // 
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Persona,
+            this.Presente,
+            this.Ausente,
+            this.Excusa});
             this.DetalleDataGridView.Location = new System.Drawing.Point(6, 87);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.RowHeadersWidth = 51;
             this.DetalleDataGridView.RowTemplate.Height = 29;
             this.DetalleDataGridView.Size = new System.Drawing.Size(867, 247);
             this.DetalleDataGridView.TabIndex = 12;
+            this.DetalleDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellClick);
+            this.DetalleDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DetalleDataGridView_CellContentClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RemoverFilaButton);
             this.groupBox1.Controls.Add(this.TotalTextBox);
             this.groupBox1.Controls.Add(this.ExcusasTextBox);
             this.groupBox1.Controls.Add(this.AusentesTextBox);
@@ -179,35 +196,35 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(24, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 439);
+            this.groupBox1.Size = new System.Drawing.Size(879, 508);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asistencias";
             // 
             // TotalTextBox
             // 
-            this.TotalTextBox.Location = new System.Drawing.Point(688, 400);
+            this.TotalTextBox.Location = new System.Drawing.Point(687, 466);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.Size = new System.Drawing.Size(185, 28);
             this.TotalTextBox.TabIndex = 23;
             // 
             // ExcusasTextBox
             // 
-            this.ExcusasTextBox.Location = new System.Drawing.Point(688, 346);
+            this.ExcusasTextBox.Location = new System.Drawing.Point(687, 412);
             this.ExcusasTextBox.Name = "ExcusasTextBox";
             this.ExcusasTextBox.Size = new System.Drawing.Size(185, 28);
             this.ExcusasTextBox.TabIndex = 22;
             // 
             // AusentesTextBox
             // 
-            this.AusentesTextBox.Location = new System.Drawing.Point(109, 400);
+            this.AusentesTextBox.Location = new System.Drawing.Point(108, 466);
             this.AusentesTextBox.Name = "AusentesTextBox";
             this.AusentesTextBox.Size = new System.Drawing.Size(185, 28);
             this.AusentesTextBox.TabIndex = 21;
             // 
             // PresentesTextBox
             // 
-            this.PresentesTextBox.Location = new System.Drawing.Point(109, 346);
+            this.PresentesTextBox.Location = new System.Drawing.Point(108, 412);
             this.PresentesTextBox.Name = "PresentesTextBox";
             this.PresentesTextBox.Size = new System.Drawing.Size(185, 28);
             this.PresentesTextBox.TabIndex = 20;
@@ -217,7 +234,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(600, 400);
+            this.label8.Location = new System.Drawing.Point(599, 466);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 24);
             this.label8.TabIndex = 19;
@@ -228,7 +245,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(600, 346);
+            this.label7.Location = new System.Drawing.Point(599, 412);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 24);
             this.label7.TabIndex = 18;
@@ -239,7 +256,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(6, 400);
+            this.label6.Location = new System.Drawing.Point(5, 466);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 24);
             this.label6.TabIndex = 17;
@@ -250,7 +267,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(6, 346);
+            this.label5.Location = new System.Drawing.Point(5, 412);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
             this.label5.TabIndex = 16;
@@ -265,6 +282,7 @@
             this.AgregarButton.TabIndex = 15;
             this.AgregarButton.Text = "+";
             this.AgregarButton.UseVisualStyleBackColor = true;
+            this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
             // PersonaComboBox
             // 
@@ -273,6 +291,7 @@
             this.PersonaComboBox.Name = "PersonaComboBox";
             this.PersonaComboBox.Size = new System.Drawing.Size(811, 28);
             this.PersonaComboBox.TabIndex = 14;
+            this.PersonaComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonaComboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -287,7 +306,7 @@
             // 
             // UsuarioTextBox
             // 
-            this.UsuarioTextBox.Location = new System.Drawing.Point(418, 623);
+            this.UsuarioTextBox.Location = new System.Drawing.Point(423, 683);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(185, 27);
             this.UsuarioTextBox.TabIndex = 22;
@@ -297,7 +316,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(329, 623);
+            this.label9.Location = new System.Drawing.Point(334, 683);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 24);
             this.label9.TabIndex = 21;
@@ -307,11 +326,49 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // RemoverFilaButton
+            // 
+            this.RemoverFilaButton.Location = new System.Drawing.Point(6, 340);
+            this.RemoverFilaButton.Name = "RemoverFilaButton";
+            this.RemoverFilaButton.Size = new System.Drawing.Size(129, 29);
+            this.RemoverFilaButton.TabIndex = 0;
+            this.RemoverFilaButton.Text = "Remover fila";
+            this.RemoverFilaButton.UseVisualStyleBackColor = true;
+            this.RemoverFilaButton.Click += new System.EventHandler(this.RemoverFilaButton_Click);
+            // 
+            // Persona
+            // 
+            this.Persona.HeaderText = "Persona";
+            this.Persona.MinimumWidth = 6;
+            this.Persona.Name = "Persona";
+            this.Persona.Width = 125;
+            // 
+            // Presente
+            // 
+            this.Presente.HeaderText = "Presente";
+            this.Presente.MinimumWidth = 6;
+            this.Presente.Name = "Presente";
+            this.Presente.Width = 125;
+            // 
+            // Ausente
+            // 
+            this.Ausente.HeaderText = "Ausente";
+            this.Ausente.MinimumWidth = 6;
+            this.Ausente.Name = "Ausente";
+            this.Ausente.Width = 125;
+            // 
+            // Excusa
+            // 
+            this.Excusa.HeaderText = "Excusa";
+            this.Excusa.MinimumWidth = 6;
+            this.Excusa.Name = "Excusa";
+            this.Excusa.Width = 125;
+            // 
             // rAsistencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 742);
+            this.ClientSize = new System.Drawing.Size(929, 773);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -326,7 +383,8 @@
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label1);
             this.Name = "rAsistencias";
-            this.Text = "rAsistencias";
+            this.Text = "Registro de asistencias";
+            this.Load += new System.EventHandler(this.rAsistencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -365,5 +423,10 @@
         private System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button RemoverFilaButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Persona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Presente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ausente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Excusa;
     }
 }

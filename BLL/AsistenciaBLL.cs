@@ -33,7 +33,7 @@ namespace ActividadesApostolica.BLL
             return encontrado;
         }
 
-        private static bool Insertar(Asistencias asistencia)
+        public static bool Guardar(Asistencias asistencia)
         {
             bool paso = false;
             var contexto = new Contexto();
@@ -76,7 +76,7 @@ namespace ActividadesApostolica.BLL
             return paso;
         }
 
-        private static bool Modificar(Asistencias asistencia)
+        public static bool Modificar(Asistencias asistencia)
         {
             bool paso = false;
             var contexto = new Contexto();
@@ -120,15 +120,6 @@ namespace ActividadesApostolica.BLL
             }
 
             return paso;
-        }
-
-        public static bool Guardar(Asistencias asistencia)
-        {
-            if (!Existe(asistencia.AsistenciaId))
-                return Insertar(asistencia);
-            else
-                return Modificar(asistencia);
-
         }
 
         public static Asistencias Buscar(int id)

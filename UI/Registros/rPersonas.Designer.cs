@@ -210,7 +210,7 @@ namespace ActividadesApostolica.UI.Registros
             this.ApellidosTextBox.Name = "ApellidosTextBox";
             this.ApellidosTextBox.Size = new System.Drawing.Size(652, 27);
             this.ApellidosTextBox.TabIndex = 32;
-          
+            // 
             // NombresTextBox
             // 
             this.NombresTextBox.Location = new System.Drawing.Point(14, 139);
@@ -306,7 +306,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "rPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro De Asistencias";
+            this.Text = "Registro De Personas";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);

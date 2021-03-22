@@ -48,42 +48,42 @@ namespace ActividadesApostolica.UI.Registros
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
-            //
+            // 
             // NumericUpDown
-            //
+            // 
             this.NumericUpDown.Location = new System.Drawing.Point(12, 52);
             this.NumericUpDown.Name = "NumericUpDown";
             this.NumericUpDown.Size = new System.Drawing.Size(150, 27);
             this.NumericUpDown.TabIndex = 0;
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Id";
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripción";
-            //
+            // 
             // DescriccionTextBox
-            //
+            // 
             this.DescriccionTextBox.Location = new System.Drawing.Point(12, 117);
             this.DescriccionTextBox.Multiline = true;
             this.DescriccionTextBox.Name = "DescriccionTextBox";
             this.DescriccionTextBox.Size = new System.Drawing.Size(294, 28);
             this.DescriccionTextBox.TabIndex = 3;
-            //
+            // 
             // BuscarButton
-            //
+            // 
             this.BuscarButton.Location = new System.Drawing.Point(212, 52);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 29);
@@ -91,9 +91,9 @@ namespace ActividadesApostolica.UI.Registros
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
-            //
+            // 
             // NuevoButton
-            //
+            // 
             this.NuevoButton.Location = new System.Drawing.Point(12, 186);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(94, 29);
@@ -101,9 +101,9 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
-            //
+            // 
             // GuardarButton
-            //
+            // 
             this.GuardarButton.Location = new System.Drawing.Point(112, 186);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(94, 29);
@@ -111,9 +111,9 @@ namespace ActividadesApostolica.UI.Registros
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            //
+            // 
             // EliminarButton
-            //
+            // 
             this.EliminarButton.Location = new System.Drawing.Point(212, 186);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(94, 29);
@@ -121,13 +121,13 @@ namespace ActividadesApostolica.UI.Registros
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
-            //
+            // 
             // MyErrorProvider
-            //
+            // 
             this.MyErrorProvider.ContainerControl = this;
-            //
+            // 
             // rActividades
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 238);
@@ -140,13 +140,11 @@ namespace ActividadesApostolica.UI.Registros
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumericUpDown);
             this.Name = "rActividades";
-            this.Text = "rActividades";
+            this.Text = "Registro de Actividades";
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-
 
         }
 
