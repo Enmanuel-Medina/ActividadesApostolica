@@ -1,4 +1,5 @@
-﻿using ActividadesApostolica.UI.Registros;
+﻿using ActividadesApostolica.UI.Consultas;
+using ActividadesApostolica.UI.Registros;
 using System;
 using System.Data;
 using System.Drawing;
@@ -30,6 +31,9 @@ namespace ActividadesApostolica
 
             //Personas
             this.PersonasStripMenuItem.Click += new EventHandler(this.PersonasStripMenuItem_ItemCliked);
+
+            //Cosultas
+            this.ActividadStripMenuItem.Click += new EventHandler(this.ActividadStripMenuItem_ItemCliked);
 
         }
 
@@ -65,6 +69,13 @@ namespace ActividadesApostolica
             personas.Show();
         }
 
+        // Consultas
+        private void ActividadStripMenuItem_ItemCliked(object sender, EventArgs e)
+        {
+            var actividad = new cActividades();
+            actividad.MdiParent = this;
+            actividad.Show();
+        }
 
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

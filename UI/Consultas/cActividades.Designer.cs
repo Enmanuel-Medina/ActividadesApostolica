@@ -29,7 +29,8 @@ namespace ActividadesApostolica.UI.Consultas
         /// </summary>
         private void InitializeComponent()
         {
-            this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cActividades));
+            this.CategoriasConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.CriterioLabel = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
@@ -39,32 +40,33 @@ namespace ActividadesApostolica.UI.Consultas
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdeLabel = new System.Windows.Forms.Label();
             this.ConsultarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
+            this.FechaCheckBox = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriasConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // ConsultaDataGridView
+            // CategoriasConsultaDataGridView
             // 
-            this.ConsultaDataGridView.AllowUserToAddRows = false;
-            this.ConsultaDataGridView.AllowUserToDeleteRows = false;
-            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.CategoriasConsultaDataGridView.AllowUserToAddRows = false;
+            this.CategoriasConsultaDataGridView.AllowUserToDeleteRows = false;
+            this.CategoriasConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(26, 119);
-            this.ConsultaDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ConsultaDataGridView.Name = "ConsultaDataGridView";
-            this.ConsultaDataGridView.ReadOnly = true;
-            this.ConsultaDataGridView.RowHeadersWidth = 51;
-            this.ConsultaDataGridView.RowTemplate.Height = 24;
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(948, 516);
-            this.ConsultaDataGridView.TabIndex = 41;
+            this.CategoriasConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CategoriasConsultaDataGridView.Location = new System.Drawing.Point(26, 181);
+            this.CategoriasConsultaDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CategoriasConsultaDataGridView.Name = "CategoriasConsultaDataGridView";
+            this.CategoriasConsultaDataGridView.ReadOnly = true;
+            this.CategoriasConsultaDataGridView.RowHeadersWidth = 51;
+            this.CategoriasConsultaDataGridView.RowTemplate.Height = 24;
+            this.CategoriasConsultaDataGridView.Size = new System.Drawing.Size(948, 454);
+            this.CategoriasConsultaDataGridView.TabIndex = 41;
             // 
             // CriterioTextBox
             // 
             this.CriterioTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.CriterioTextBox.Location = new System.Drawing.Point(512, 69);
+            this.CriterioTextBox.Location = new System.Drawing.Point(364, 145);
             this.CriterioTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CriterioTextBox.Name = "CriterioTextBox";
-            this.CriterioTextBox.Size = new System.Drawing.Size(294, 27);
+            this.CriterioTextBox.Size = new System.Drawing.Size(454, 27);
             this.CriterioTextBox.TabIndex = 39;
             // 
             // CriterioLabel
@@ -72,7 +74,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.CriterioLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.CriterioLabel.AutoSize = true;
             this.CriterioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CriterioLabel.Location = new System.Drawing.Point(509, 29);
+            this.CriterioLabel.Location = new System.Drawing.Point(273, 149);
             this.CriterioLabel.Name = "CriterioLabel";
             this.CriterioLabel.Size = new System.Drawing.Size(56, 18);
             this.CriterioLabel.TabIndex = 38;
@@ -83,12 +85,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.FiltroComboBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
-            this.FiltroComboBox.Items.AddRange(new object[] {
-            "Todo",
-            "Id",
-            "Profesor",
-            "Cantidad total de estudiantes"});
-            this.FiltroComboBox.Location = new System.Drawing.Point(358, 69);
+            this.FiltroComboBox.Location = new System.Drawing.Point(128, 145);
             this.FiltroComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(126, 28);
@@ -99,7 +96,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.FiltroLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FiltroLabel.AutoSize = true;
             this.FiltroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FiltroLabel.Location = new System.Drawing.Point(355, 29);
+            this.FiltroLabel.Location = new System.Drawing.Point(49, 149);
             this.FiltroLabel.Name = "FiltroLabel";
             this.FiltroLabel.Size = new System.Drawing.Size(41, 18);
             this.FiltroLabel.TabIndex = 36;
@@ -111,7 +108,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(178, 69);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(556, 58);
             this.HastaDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
             this.HastaDateTimePicker.Size = new System.Drawing.Size(129, 24);
@@ -122,7 +119,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.HastaLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.HastaLabel.AutoSize = true;
             this.HastaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.HastaLabel.Location = new System.Drawing.Point(175, 29);
+            this.HastaLabel.Location = new System.Drawing.Point(492, 63);
             this.HastaLabel.Name = "HastaLabel";
             this.HastaLabel.Size = new System.Drawing.Size(47, 18);
             this.HastaLabel.TabIndex = 34;
@@ -134,7 +131,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdeDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(22, 69);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(293, 57);
             this.DesdeDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(129, 24);
@@ -145,7 +142,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.DesdeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.DesdeLabel.AutoSize = true;
             this.DesdeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DesdeLabel.Location = new System.Drawing.Point(19, 29);
+            this.DesdeLabel.Location = new System.Drawing.Point(218, 63);
             this.DesdeLabel.Name = "DesdeLabel";
             this.DesdeLabel.Size = new System.Drawing.Size(51, 18);
             this.DesdeLabel.TabIndex = 32;
@@ -155,7 +152,7 @@ namespace ActividadesApostolica.UI.Consultas
             // 
             this.ConsultarButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarButton.Location = new System.Drawing.Point(812, 58);
+            this.ConsultarButton.Location = new System.Drawing.Point(691, 45);
             this.ConsultarButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ConsultarButton.Name = "ConsultarButton";
             this.ConsultarButton.Size = new System.Drawing.Size(114, 55);
@@ -164,12 +161,23 @@ namespace ActividadesApostolica.UI.Consultas
             this.ConsultarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ConsultarButton.UseVisualStyleBackColor = true;
             // 
+            // FechaCheckBox
+            // 
+            this.FechaCheckBox.AutoSize = true;
+            this.FechaCheckBox.Location = new System.Drawing.Point(39, 57);
+            this.FechaCheckBox.Name = "FechaCheckBox";
+            this.FechaCheckBox.Size = new System.Drawing.Size(157, 24);
+            this.FechaCheckBox.TabIndex = 42;
+            this.FechaCheckBox.Text = "Usar filtro de fecha";
+            this.FechaCheckBox.UseVisualStyleBackColor = true;
+            // 
             // cActividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 650);
-            this.Controls.Add(this.ConsultaDataGridView);
+            this.Controls.Add(this.FechaCheckBox);
+            this.Controls.Add(this.CategoriasConsultaDataGridView);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.CriterioLabel);
@@ -179,10 +187,11 @@ namespace ActividadesApostolica.UI.Consultas
             this.Controls.Add(this.HastaLabel);
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.DesdeLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "cActividades";
-            this.Text = "Consulta asistencias";
-            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
+            this.Text = "Consulta actividades";
+            ((System.ComponentModel.ISupportInitialize)(this.CategoriasConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +199,7 @@ namespace ActividadesApostolica.UI.Consultas
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ConsultaDataGridView;
+        private System.Windows.Forms.DataGridView CategoriasConsultaDataGridView;
         private System.Windows.Forms.Button ConsultarButton;
         private System.Windows.Forms.TextBox CriterioTextBox;
         private System.Windows.Forms.Label CriterioLabel;
@@ -200,5 +209,6 @@ namespace ActividadesApostolica.UI.Consultas
         private System.Windows.Forms.Label HastaLabel;
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.Label DesdeLabel;
+        private System.Windows.Forms.CheckBox FechaCheckBox;
     }
 }

@@ -14,5 +14,7 @@ namespace ActividadesApostolica.Entidades
         public int ActividadId { get; set; }
 
         public string Descripcion { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
     }
 }
