@@ -21,54 +21,42 @@ namespace ActividadesApostolica.UI.Consultas
             InitializeComponent();
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void ConsultarButton_Click(object sender, EventArgs e)
         {
-            //Si el filtro de la fecha se encuentra marcado, va a tomar en cuenta le rango de fecha
-            if (FechacCheckBox.Checked)
+            //RepositorioBase<Asistencias> repositorio = new RepositorioBase<Asistencias>();
+
+
+            if (CriterioTextBox.Text.Trim().Length > 0)
             {
-                if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                switch (FiltroComboBox.SelectedIndex)
                 {
-                    switch (FiltroComboBox.SelectedIndex)
-                    {
-                        case 0: // AsistenciaId
-                            lista = AsistenciasBLL.GetList(r => r.AsistenciaId == Utilidades.ToInt(CriterioTextBox.Text) && (r.Fecha >= DesdeDateTimePicker.Value && r.Fecha <= HastaDateTimePicker.Value));
-                            break;
-                        case 1: //Nombre
-                            lista = AsistenciasBLL.GetList(r => r..Contains(CriterioTextBox.Text) && (r.Fecha >= DesdeDateTimePicker.Value && r.Fecha <= HastaDateTimePicker.Value));
-                            break;
-                    }
+                    case 0:
+                        lista = AsistenciasBLL.GetList(a => true);
+                        break;
+
+                    case 1:
+                        int id = Convert.ToInt32(CriterioTextBox.Text);
+                        lista = AsistenciasBLL.GetList(a => a.AsistenciaId == id);
+                        break;
+
+                    case 2:
+                        lista = AsistenciasBLL.GetList(a => a.//No se que poner.Contains(CriterioTextBox.Text));
+                        break;
+
+                    case 3:
+                        int total = Convert.ToInt32(CriterioTextBox.Text);
+                        lista = AsistenciasBLL.GetList(a => a.Total == total);
+                        break;
                 }
-                //En caso de que no haya nada en el textBox, se imprimirán todos los asistencias
-                else
-                    lista = AsistenciasBLL.GetList(r => (r.Fecha >= DesdeDateTimePicker.Value && r.Fecha <= HastaDateTimePicker.Value));
+                lista = lista.Where(a => a.Fecha.Date >= DesdeDateTimePicker.Value.Date && a.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
             else
             {
-                if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
-                {
-                    switch (FiltroComboBox.SelectedIndex)
-                    {
-                        case 0: //Asistencias
-                            lista = AsistenciasBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
-                            break;
-                        case 1: //NombreCategoria
-                            lista = AsistenciasBLL.GetList(r => r.AsistenciaId.Contains(CriterioTextBox.Text));
-                            break;
-                    }
-                }
-                //En caso de que no haya nada en el textBox, se imprimirán todos los categorias
-                else
-                    lista = AsistenciasBLL.GetList(r => true);
+                lista = AsistenciasBLL.GetList(p => true);
             }
-
 
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = lista;
         }
-
-        
-    }
+    } 
 }
-
-
-

@@ -26,6 +26,8 @@ namespace ActividadesApostolica.Entidades
         public int CantidadExcusas { get; set; }
 
         public int UsuarioId { get; set; }
+        
+
 
         public virtual List<AsistenciasDetalle> AsistenciasDetalle { get; set; }
 
