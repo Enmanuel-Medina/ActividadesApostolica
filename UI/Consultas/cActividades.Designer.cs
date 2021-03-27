@@ -68,6 +68,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(454, 27);
             this.CriterioTextBox.TabIndex = 39;
+            this.CriterioTextBox.TextChanged += new System.EventHandler(this.CriterioTextBox_TextChanged);
             // 
             // CriterioLabel
             // 
@@ -136,6 +137,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(129, 24);
             this.DesdeDateTimePicker.TabIndex = 33;
+            this.DesdeDateTimePicker.ValueChanged += new System.EventHandler(this.DesdeDateTimePicker_ValueChanged);
             // 
             // DesdeLabel
             // 

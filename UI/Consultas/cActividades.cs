@@ -64,6 +64,16 @@ namespace ActividadesApostolica.UI.Consultas
             CategoriasConsultaDataGridView.DataSource = null;
             CategoriasConsultaDataGridView.DataSource = lista;
         }
+
+        private void DesdeDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
