@@ -95,7 +95,43 @@ namespace ActividadesApostolica.UI.Registros
             PersonaComboBox.DisplayMember = "Nombres";
         }
 
-        private void rAsistencias_Load(object sender, EventArgs e)
+        private bool Validar()
+        {
+            bool paso = true;
+
+            if (string.IsNullOrWhiteSpace(ActividadComboBox.Text))
+            {
+                MyErrorProvider.SetError(ActividadComboBox, "El campo Actividad no puede estar vacio");
+                ActividadComboBox.Focus();
+                paso = false;
+
+            }
+
+            if (string.IsNullOrWhiteSpace(UsuarioTextBox.Text))
+            {
+                MyErrorProvider.SetError(UsuarioTextBox, "El campo usuario no puede estar vacio");
+                UsuarioTextBox.Focus();
+                paso = false;
+            }
+            return paso;
+        }   
+
+        private bool ValidarDetalle()
+        {
+            bool paso = true;
+
+            if (string.IsNullOrWhiteSpace(AgregarButton.Text))
+                {
+
+                MyErrorProvider.SetError(AgregarButton, "Tiene que agregar algo");
+                AgregarButton.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
+
+            private void rAsistencias_Load(object sender, EventArgs e)
         {
             LlenarComboActividades();
             LlenarComboPersonas();
