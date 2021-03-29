@@ -32,13 +32,11 @@ namespace ActividadesApostolica.UI.Registros
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.MetaTextBox = new System.Windows.Forms.TextBox();
-            this.ContribucionTextBox = new System.Windows.Forms.TextBox();
             this.LogradoTextBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.BuscarButton = new System.Windows.Forms.Button();
@@ -76,15 +74,6 @@ namespace ActividadesApostolica.UI.Registros
             this.label3.TabIndex = 2;
             this.label3.Text = "Meta";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 259);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Contribucion";
             // 
             // label5
             // 
@@ -126,13 +115,6 @@ namespace ActividadesApostolica.UI.Registros
             this.MetaTextBox.Size = new System.Drawing.Size(165, 27);
             this.MetaTextBox.TabIndex = 8;
             // 
-            // ContribucionTextBox
-            // 
-            this.ContribucionTextBox.Location = new System.Drawing.Point(12, 293);
-            this.ContribucionTextBox.Name = "ContribucionTextBox";
-            this.ContribucionTextBox.Size = new System.Drawing.Size(165, 27);
-            this.ContribucionTextBox.TabIndex = 9;
-            // 
             // LogradoTextBox
             // 
             this.LogradoTextBox.Location = new System.Drawing.Point(283, 215);
@@ -159,7 +141,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(83, 362);
+            this.NuevoButton.Location = new System.Drawing.Point(83, 301);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(94, 29);
             this.NuevoButton.TabIndex = 13;
@@ -168,7 +150,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // GuardarButton
             // 
-            this.GuardarButton.Location = new System.Drawing.Point(206, 362);
+            this.GuardarButton.Location = new System.Drawing.Point(206, 301);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(94, 29);
             this.GuardarButton.TabIndex = 14;
@@ -177,7 +159,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(328, 362);
+            this.EliminarButton.Location = new System.Drawing.Point(328, 301);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(94, 29);
             this.EliminarButton.TabIndex = 15;
@@ -198,7 +180,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 433);
+            this.ClientSize = new System.Drawing.Size(511, 363);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -206,13 +188,11 @@ namespace ActividadesApostolica.UI.Registros
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.LogradoTextBox);
-            this.Controls.Add(this.ContribucionTextBox);
             this.Controls.Add(this.MetaTextBox);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -229,13 +209,11 @@ namespace ActividadesApostolica.UI.Registros
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown IdNumericUpDown;
         private System.Windows.Forms.TextBox DescripcionTextBox;
         private System.Windows.Forms.TextBox MetaTextBox;
-        private System.Windows.Forms.TextBox ContribucionTextBox;
         private System.Windows.Forms.TextBox LogradoTextBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button BuscarButton;

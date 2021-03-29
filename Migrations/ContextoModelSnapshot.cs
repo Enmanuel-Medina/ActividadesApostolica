@@ -128,9 +128,6 @@ namespace ActividadesApostolica.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Contribucion")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
@@ -236,7 +233,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 28, 22, 34, 29, 943, DateTimeKind.Local).AddTicks(6008),
+                            Fecha = new DateTime(2021, 3, 29, 17, 0, 4, 218, DateTimeKind.Local).AddTicks(9289),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

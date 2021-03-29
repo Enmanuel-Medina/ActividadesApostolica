@@ -14,8 +14,6 @@ namespace ActividadesApostolica.Entidades
 
         public int Meta { get; set; }
 
-        public int Contribucion { get; set; }
-
         public DateTime Vence { get; set; }
     }
 }
