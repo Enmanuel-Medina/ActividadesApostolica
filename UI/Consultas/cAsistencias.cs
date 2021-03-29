@@ -40,13 +40,10 @@ namespace ActividadesApostolica.UI.Consultas
                         break;
 
                     case 2:
-                        lista = AsistenciasBLL.GetList(a => a.//No se que poner.Contains(CriterioTextBox.Text));
+                        //lista = AsistenciasBLL.GetList(a => a.//No se que poner.Contains(CriterioTextBox.Text));
                         break;
 
-                    case 3:
-                        int total = Convert.ToInt32(CriterioTextBox.Text);
-                        lista = AsistenciasBLL.GetList(a => a.Total == total);
-                        break;
+                    
                 }
                 lista = lista.Where(a => a.Fecha.Date >= DesdeDateTimePicker.Value.Date && a.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             }

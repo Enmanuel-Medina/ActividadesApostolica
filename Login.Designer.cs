@@ -57,6 +57,7 @@ namespace ActividadesApostolica
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(394, 27);
             this.UsuarioTextBox.TabIndex = 1;
+           
             // 
             // ContrasenaTextBox
             // 

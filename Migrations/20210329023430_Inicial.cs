@@ -13,11 +13,29 @@ namespace ActividadesApostolica.Migrations
                 {
                     ActividadId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Descripcion = table.Column<string>(type: "TEXT", nullable: true)
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: true),
+                    FechaCreacion = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Actividades", x => x.ActividadId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Aportes",
+                columns: table => new
+                {
+                    AportesId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Meta = table.Column<string>(type: "TEXT", nullable: true),
+                    Persona = table.Column<int>(type: "INTEGER", nullable: false),
+                    Contribucion = table.Column<int>(type: "INTEGER", nullable: false),
+                    Resta = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Aportes", x => x.AportesId);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,6 +58,22 @@ namespace ActividadesApostolica.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Colectas",
+                columns: table => new
+                {
+                    ColectasId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: true),
+                    Meta = table.Column<int>(type: "INTEGER", nullable: false),
+                    Contribucion = table.Column<int>(type: "INTEGER", nullable: false),
+                    Vence = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Colectas", x => x.ColectasId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Personas",
                 columns: table => new
                 {
@@ -52,7 +86,8 @@ namespace ActividadesApostolica.Migrations
                     Celular = table.Column<string>(type: "TEXT", nullable: true),
                     Email = table.Column<string>(type: "TEXT", nullable: true),
                     Direccion = table.Column<string>(type: "TEXT", nullable: true),
-                    Cedula = table.Column<string>(type: "TEXT", nullable: true)
+                    Cedula = table.Column<string>(type: "TEXT", nullable: true),
+                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,7 +144,7 @@ namespace ActividadesApostolica.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Celular", "ClaveConfirmada", "ClaveUsuario", "Direccion", "Email", "Fecha", "NombreUsuario", "Nombres", "Telefono", "TipoUsuario" },
-                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 22, 19, 27, 21, 666, DateTimeKind.Local).AddTicks(4400), "Admin", "Admin", "0123456789", "Administrador" });
+                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 28, 22, 34, 29, 943, DateTimeKind.Local).AddTicks(6008), "Admin", "Admin", "0123456789", "Administrador" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AsistenciasDetalle_AsistenciasAsistenciaId",
@@ -123,7 +158,13 @@ namespace ActividadesApostolica.Migrations
                 name: "Actividades");
 
             migrationBuilder.DropTable(
+                name: "Aportes");
+
+            migrationBuilder.DropTable(
                 name: "AsistenciasDetalle");
+
+            migrationBuilder.DropTable(
+                name: "Colectas");
 
             migrationBuilder.DropTable(
                 name: "Personas");

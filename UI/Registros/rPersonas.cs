@@ -17,6 +17,7 @@ namespace ActividadesApostolica.UI.Registros
         public rPersonas()
         {
             InitializeComponent();
+            UsuarioTextBox.Text = Login.Nombre;
         }
 
         private void Limpiar()
@@ -30,34 +31,36 @@ namespace ActividadesApostolica.UI.Registros
             EmailTextBox.Text = String.Empty;
             DireccionTextBox.Text = String.Empty;
             CedulaMaskedTextBox.Text = String.Empty;
-           
+
         }
 
         private Personas LLenaClase()
         {
-            Personas personas = new Personas();
-            personas.PersonaId = Convert.ToInt32(IdNumericUpDown.Value);
-            personas.Nombres = NombresTextBox.Text;
-            personas.Apellidos = ApellidosTextBox.Text;
-            personas.Telefono = TelefonoMaskedTextBox.Text;
-            personas.Celular = CedulaMaskedTextBox.Text;
-            personas.Email = EmailTextBox.Text;
-            personas.Direccion = DireccionTextBox.Text;
-            personas.Cedula = CedulaMaskedTextBox.Text;
+            Personas persona = new Personas();
+            persona.PersonaId = Convert.ToInt32(IdNumericUpDown.Value);
+            persona.Nombres = NombresTextBox.Text;
+            persona.Apellidos = ApellidosTextBox.Text;
+            persona.Telefono = TelefonoMaskedTextBox.Text;
+            persona.Celular = CedulaMaskedTextBox.Text;
+            persona.Email = EmailTextBox.Text;
+            persona.Direccion = DireccionTextBox.Text;
+            persona.Cedula = CedulaMaskedTextBox.Text;
+            persona.UsuarioId = Login.UsuarioId;
 
-            return personas;
+            return persona;
         }
 
-        private void LLenaCampo(Personas perosnas)
+        private void LLenaCampo(Personas persona)
         {
-            IdNumericUpDown.Value = perosnas.PersonaId;
-            NombresTextBox.Text = perosnas.Nombres;
-            ApellidosTextBox.Text = perosnas.Apellidos;
-            TelefonoMaskedTextBox.Text = perosnas.Telefono;
-            CelularMaskedTextBox.Text = perosnas.Celular;
-            EmailTextBox.Text = perosnas.Email;
-            DireccionTextBox.Text = perosnas.Direccion;
-            CedulaMaskedTextBox.Text = perosnas.Cedula;
+            IdNumericUpDown.Value = persona.PersonaId;
+            NombresTextBox.Text = persona.Nombres;
+            ApellidosTextBox.Text = persona.Apellidos;
+            TelefonoMaskedTextBox.Text = persona.Telefono;
+            CelularMaskedTextBox.Text = persona.Celular;
+            EmailTextBox.Text = persona.Email;
+            DireccionTextBox.Text = persona.Direccion;
+            CedulaMaskedTextBox.Text = persona.Cedula;
+            UsuarioTextBox.Text = UsuariosBLL.Buscar(persona.UsuarioId).Nombres;
         }
 
         private bool Validar()
@@ -113,7 +116,7 @@ namespace ActividadesApostolica.UI.Registros
                 paso = false;
             }
 
-            
+
             return paso;
         }
 
@@ -122,10 +125,6 @@ namespace ActividadesApostolica.UI.Registros
             Personas personas = PersonasBLL.Buscar((int)IdNumericUpDown.Value);
             return (personas != null);
         }
-
-
-
-
 
         private void BuscarAsistenciaButton_Click(object sender, EventArgs e)
         {
@@ -140,8 +139,6 @@ namespace ActividadesApostolica.UI.Registros
                 LLenaCampo(personas);
             else
                 MessageBox.Show("Persona no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
         }
 
         private void NuevoAsistenciaButton_Click(object sender, EventArgs e)
@@ -202,5 +199,6 @@ namespace ActividadesApostolica.UI.Registros
 
         
     }
-    
+
 }
+

@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace ActividadesApostolica
 {
     public partial class MainForms : Form
@@ -17,8 +15,6 @@ namespace ActividadesApostolica
         public MainForms()
         {
             InitializeComponent();
-
-
 
             //Registros
             this.UsuariosStripMenuItem.Click += new EventHandler(this.UsuariosStripMenuItem_ItemClicked);
@@ -37,16 +33,18 @@ namespace ActividadesApostolica
 
         }
 
-
-
         private void UsuariosStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
             var usuario = new rUsuarios();
-            usuario.MdiParent = this;
-            usuario.Show();
+
+            if (Login.TipoUsuario == "Administrador")
+            {
+                usuario.MdiParent = this;
+                usuario.Show();
+            }
+            else
+                MessageBox.Show("Solo un usuario tipo Administrador puede acceder a este registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-
 
         private void ActividadesStripMenuItem_ItemClicked(object sender, EventArgs e)
         {
@@ -80,8 +78,6 @@ namespace ActividadesApostolica
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
-
 
         }
     }

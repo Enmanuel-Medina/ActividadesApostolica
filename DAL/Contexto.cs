@@ -18,6 +18,10 @@ namespace ActividadesApostolica.DAL
 
         public DbSet<Personas> Personas { set; get; }
 
+        public DbSet<Colectas> Colectas { set; get; }
+
+        public DbSet<Aportes> Aportes { set; get; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source= Data\ActividadesApostolicas.db");

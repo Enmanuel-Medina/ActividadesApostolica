@@ -16,7 +16,8 @@ namespace ActividadesApostolica
     {
         List<Usuarios> lista = new List<Usuarios>();
         public static int UsuarioId;
-
+        public static string TipoUsuario;
+        public static string Nombre;
         private bool Validar()
         {
             bool paso = true;
@@ -54,6 +55,8 @@ namespace ActividadesApostolica
                 if ((item.NombreUsuario == UsuarioTextBox.Text) && (item.ClaveUsuario == ContrasenaTextBox.Text))
                 {
                     UsuarioId = item.UsuarioId;
+                    TipoUsuario = item.TipoUsuario;
+                    Nombre = item.Nombres;
                     main.Show();
                     paso = true;
                     break;

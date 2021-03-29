@@ -25,9 +25,38 @@ namespace ActividadesApostolica.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ActividadId");
 
                     b.ToTable("Actividades");
+                });
+
+            modelBuilder.Entity("ActividadesApostolica.Entidades.Aportes", b =>
+                {
+                    b.Property<int>("AportesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Contribucion")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Meta")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Persona")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Resta")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("AportesId");
+
+                    b.ToTable("Aportes");
                 });
 
             modelBuilder.Entity("ActividadesApostolica.Entidades.Asistencias", b =>
@@ -93,6 +122,29 @@ namespace ActividadesApostolica.Migrations
                     b.ToTable("AsistenciasDetalle");
                 });
 
+            modelBuilder.Entity("ActividadesApostolica.Entidades.Colectas", b =>
+                {
+                    b.Property<int>("ColectasId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Contribucion")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Meta")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Vence")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ColectasId");
+
+                    b.ToTable("Colectas");
+                });
+
             modelBuilder.Entity("ActividadesApostolica.Entidades.Personas", b =>
                 {
                     b.Property<int>("PersonaId")
@@ -122,6 +174,9 @@ namespace ActividadesApostolica.Migrations
 
                     b.Property<string>("Telefono")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("PersonaId");
 
@@ -181,7 +236,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 22, 19, 27, 21, 666, DateTimeKind.Local).AddTicks(4400),
+                            Fecha = new DateTime(2021, 3, 28, 22, 34, 29, 943, DateTimeKind.Local).AddTicks(6008),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

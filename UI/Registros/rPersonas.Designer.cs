@@ -53,6 +53,8 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoAsistenciaButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.CedulaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +228,12 @@ namespace ActividadesApostolica.UI.Registros
             this.IdNumericUpDown.Name = "IdNumericUpDown";
             this.IdNumericUpDown.Size = new System.Drawing.Size(152, 27);
             this.IdNumericUpDown.TabIndex = 30;
+           
             // 
             // EliminarAsistenciaButton
             // 
             this.EliminarAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EliminarAsistenciaButton.Location = new System.Drawing.Point(426, 587);
+            this.EliminarAsistenciaButton.Location = new System.Drawing.Point(434, 602);
             this.EliminarAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EliminarAsistenciaButton.Name = "EliminarAsistenciaButton";
             this.EliminarAsistenciaButton.Size = new System.Drawing.Size(135, 39);
@@ -242,7 +245,7 @@ namespace ActividadesApostolica.UI.Registros
             // GuardarAsistenciaButton
             // 
             this.GuardarAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GuardarAsistenciaButton.Location = new System.Drawing.Point(255, 587);
+            this.GuardarAsistenciaButton.Location = new System.Drawing.Point(262, 602);
             this.GuardarAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GuardarAsistenciaButton.Name = "GuardarAsistenciaButton";
             this.GuardarAsistenciaButton.Size = new System.Drawing.Size(135, 39);
@@ -254,7 +257,7 @@ namespace ActividadesApostolica.UI.Registros
             // NuevoAsistenciaButton
             // 
             this.NuevoAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NuevoAsistenciaButton.Location = new System.Drawing.Point(83, 587);
+            this.NuevoAsistenciaButton.Location = new System.Drawing.Point(93, 602);
             this.NuevoAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NuevoAsistenciaButton.Name = "NuevoAsistenciaButton";
             this.NuevoAsistenciaButton.Size = new System.Drawing.Size(135, 39);
@@ -276,11 +279,32 @@ namespace ActividadesApostolica.UI.Registros
             this.CedulaMaskedTextBox.Size = new System.Drawing.Size(652, 27);
             this.CedulaMaskedTextBox.TabIndex = 55;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(189, 684);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Usuario";
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.Location = new System.Drawing.Point(264, 681);
+            this.UsuarioTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.ReadOnly = true;
+            this.UsuarioTextBox.Size = new System.Drawing.Size(205, 27);
+            this.UsuarioTextBox.TabIndex = 56;
+            // 
             // rPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 645);
+            this.ClientSize = new System.Drawing.Size(681, 721);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.CedulaMaskedTextBox);
             this.Controls.Add(this.EliminarAsistenciaButton);
             this.Controls.Add(this.GuardarAsistenciaButton);
@@ -339,5 +363,7 @@ namespace ActividadesApostolica.UI.Registros
         private System.Windows.Forms.Button NuevoAsistenciaButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
         private System.Windows.Forms.MaskedTextBox CedulaMaskedTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
     }
 }

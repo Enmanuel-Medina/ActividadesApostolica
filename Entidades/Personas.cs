@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ActividadesApostolica.Entidades
 {
-  public class Personas
+    public class Personas
     {
         [Key]
 
@@ -29,7 +29,6 @@ namespace ActividadesApostolica.Entidades
 
         public string Cedula { get; set; }
 
-
-
+        public int UsuarioId { get; set; }
     }
 }
