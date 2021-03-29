@@ -55,5 +55,10 @@ namespace ActividadesApostolica.UI.Consultas
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = lista;
         }
+
+        private void ConsultarButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
     } 
 }

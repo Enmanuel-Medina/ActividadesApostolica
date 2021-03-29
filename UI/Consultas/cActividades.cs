@@ -20,7 +20,7 @@ namespace ActividadesApostolica.UI.Consultas
             InitializeComponent();
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void ConsultarButton_Click(object sender, EventArgs e)
         {
             //Si el filtro de la fecha se encuentra marcado, va a tomar en cuenta le rango de fecha
             if (FechaCheckBox.Checked)
@@ -29,51 +29,43 @@ namespace ActividadesApostolica.UI.Consultas
                 {
                     switch (FiltroComboBox.SelectedIndex)
                     {
-                        case 0: //CategoriaId
+                        case 0: //Actividades
                             lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text) && (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
                             break;
-                        case 1: //NombreCategoria
+                        case 1: //Descripcion
                             lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text) && (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
                             break;
                     }
+
                 }
-                //En caso de que no haya nada en el textBox, se imprimirán todos los categorias
                 else
                     lista = ActividadesBLL.GetList(r => (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
-            }
-            else
-            {
-                if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
-                {
-                    switch (FiltroComboBox.SelectedIndex)
-                    {
-                        case 0: //CategoriaId
-                            lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
-                            break;
-                        case 1: //NombreCategoria
-                            lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
-                            break;
-                    }
                 }
-                //En caso de que no haya nada en el textBox, se imprimirán todos los categorias
                 else
-                    lista = ActividadesBLL.GetList(r => true);
-            }
+                {
+                    if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                    {
+                        switch (FiltroComboBox.SelectedIndex)
+                        {
+                            case 0: //AcvidadId
+                                lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
+                                break;
+                            case 1: //Descripciom
+                                lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
+                                break;
+                        }
+                    }
+                    //En caso de que no haya nada en el textBo
+                    else
+                        lista = ActividadesBLL.GetList(r => true);
+                }
 
 
-            CategoriasConsultaDataGridView.DataSource = null;
-            CategoriasConsultaDataGridView.DataSource = lista;
-        }
-
-        private void DesdeDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CriterioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+                CategoriasConsultaDataGridView.DataSource = null;
+                CategoriasConsultaDataGridView.DataSource = lista;
         }
     }
-}
+ }
+
+
 

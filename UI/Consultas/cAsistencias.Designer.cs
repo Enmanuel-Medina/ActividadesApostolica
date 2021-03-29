@@ -163,6 +163,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.ConsultarButton.TabIndex = 40;
             this.ConsultarButton.Text = "Buscar";
             this.ConsultarButton.UseVisualStyleBackColor = true;
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click_1);
             // 
             // FechacCheckBox
             // 

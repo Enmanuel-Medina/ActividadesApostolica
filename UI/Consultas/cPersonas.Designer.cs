@@ -37,9 +37,9 @@ namespace ActividadesApostolica.UI.Consultas
             this.label3 = new System.Windows.Forms.Label();
             this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.BuscarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // UsarCheckBox
@@ -98,6 +98,11 @@ namespace ActividadesApostolica.UI.Consultas
             // FiltroComboBox
             // 
             this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Items.AddRange(new object[] {
+            "Id",
+            "Nombre",
+            "Apellido",
+            "Direccion"});
             this.FiltroComboBox.Location = new System.Drawing.Point(61, 57);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(134, 28);
@@ -109,17 +114,16 @@ namespace ActividadesApostolica.UI.Consultas
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(491, 27);
             this.CriterioTextBox.TabIndex = 7;
-            this.CriterioTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // dataGridView1
+            // ConsultaDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 323);
-            this.dataGridView1.TabIndex = 8;
+            this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 115);
+            this.ConsultaDataGridView.Name = "ConsultaDataGridView";
+            this.ConsultaDataGridView.RowHeadersWidth = 51;
+            this.ConsultaDataGridView.RowTemplate.Height = 29;
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(812, 323);
+            this.ConsultaDataGridView.TabIndex = 8;
             // 
             // BuscarButton
             // 
@@ -129,6 +133,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.BuscarButton.TabIndex = 9;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // cPersonas
             // 
@@ -136,7 +141,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
             this.Controls.Add(this.BuscarButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.FiltroComboBox);
             this.Controls.Add(this.label3);
@@ -147,7 +152,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.Controls.Add(this.UsarCheckBox);
             this.Name = "cPersonas";
             this.Text = "cPersonas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +168,7 @@ namespace ActividadesApostolica.UI.Consultas
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox FiltroComboBox;
         private System.Windows.Forms.TextBox CriterioTextBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.Button BuscarButton;
     }
 }
