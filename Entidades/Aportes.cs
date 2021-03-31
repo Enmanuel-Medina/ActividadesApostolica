@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ActividadesApostolica.Entidades
 {
-   public class Aportes
+    public class Aportes
     {
         public int AportesId { get; set; }
 
         public DateTime Fecha { get; set; }
 
-        public string Meta { get; set; }
+        public int ColectaId { get; set; }
+
+        public int Meta { get; set; }
 
         public int Persona { get; set; }
 
@@ -22,3 +24,4 @@ namespace ActividadesApostolica.Entidades
 
     }
 }
+

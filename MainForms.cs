@@ -28,6 +28,13 @@ namespace ActividadesApostolica
             //Personas
             this.PersonasStripMenuItem.Click += new EventHandler(this.PersonasStripMenuItem_ItemCliked);
 
+            //Colectas
+            this.ColectasStripMenuItem.Click += new EventHandler(this.ColectasStripMenuItem_ItemCliked);
+
+            //Aportes
+            this.AportesStripMenuItem.Click += new EventHandler(this.AportesStripMenuItem_ItemCliked);
+
+           //---------------------------------------------------------------------------------------------//
             //Cosultas
             this.ActividadStripMenuItem.Click += new EventHandler(this.ActividadStripMenuItem_ItemCliked);
 
@@ -72,6 +79,22 @@ namespace ActividadesApostolica
             personas.MdiParent = this;
             personas.Show();
         }
+
+        private void ColectasStripMenuItem_ItemCliked(object sender, EventArgs e)
+        {
+            var colectas = new rColectas();
+            colectas.MdiParent = this;
+            colectas.Show();
+        }
+
+        private void AportesStripMenuItem_ItemCliked(object sender, EventArgs e)
+        {
+            var aportes = new rAportes();
+            aportes.MdiParent = this;
+            aportes.Show();
+        }
+
+
 
         // Consultas
         private void ActividadStripMenuItem_ItemCliked(object sender, EventArgs e)

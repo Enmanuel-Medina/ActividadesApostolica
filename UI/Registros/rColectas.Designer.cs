@@ -29,6 +29,7 @@ namespace ActividadesApostolica.UI.Registros
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +45,9 @@ namespace ActividadesApostolica.UI.Registros
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +76,6 @@ namespace ActividadesApostolica.UI.Registros
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Meta";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -138,6 +140,7 @@ namespace ActividadesApostolica.UI.Registros
             this.BuscarButton.TabIndex = 12;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // NuevoButton
             // 
@@ -147,6 +150,7 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoButton.TabIndex = 13;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // GuardarButton
             // 
@@ -156,6 +160,7 @@ namespace ActividadesApostolica.UI.Registros
             this.GuardarButton.TabIndex = 14;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click_1);
             // 
             // EliminarButton
             // 
@@ -165,6 +170,7 @@ namespace ActividadesApostolica.UI.Registros
             this.EliminarButton.TabIndex = 15;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
             // 
             // checkBox1
             // 
@@ -175,6 +181,10 @@ namespace ActividadesApostolica.UI.Registros
             this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "Activa";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rColectas
             // 
@@ -199,6 +209,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Name = "rColectas";
             this.Text = "rColectas";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +232,6 @@ namespace ActividadesApostolica.UI.Registros
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }

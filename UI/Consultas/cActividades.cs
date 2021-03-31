@@ -40,32 +40,29 @@ namespace ActividadesApostolica.UI.Consultas
                 }
                 else
                     lista = ActividadesBLL.GetList(r => (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
-                }
-                else
+            }
+            else
+            {
+                if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
                 {
-                    if (!String.IsNullOrWhiteSpace(CriterioTextBox.Text))
+                    switch (FiltroComboBox.SelectedIndex)
                     {
-                        switch (FiltroComboBox.SelectedIndex)
-                        {
-                            case 0: //AcvidadId
-                                lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
-                                break;
-                            case 1: //Descripciom
-                                lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
-                                break;
-                        }
+                        case 0: //AcvidadId
+                            lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
+                            break;
+                        case 1: //Descripciom
+                            lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
+                            break;
                     }
-                    //En caso de que no haya nada en el textBo
-                    else
-                        lista = ActividadesBLL.GetList(r => true);
                 }
+                //En caso de que no haya nada en el textBo
+                else
+                    lista = ActividadesBLL.GetList(r => true);
+            }
 
 
-                CategoriasConsultaDataGridView.DataSource = null;
-                CategoriasConsultaDataGridView.DataSource = lista;
+            CategoriasConsultaDataGridView.DataSource = null;
+            CategoriasConsultaDataGridView.DataSource = lista;
         }
     }
- }
-
-
-
+}

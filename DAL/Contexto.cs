@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace ActividadesApostolica.DAL
 {
     public class Contexto : DbContext
     {
+         
+
         public DbSet<Usuarios> Usuarios { set; get; }
 
         public DbSet<Actividades> Actividades { set; get; }

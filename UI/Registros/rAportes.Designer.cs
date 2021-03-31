@@ -29,6 +29,7 @@ namespace ActividadesApostolica.UI.Registros
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,11 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.ElimarButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +77,6 @@ namespace ActividadesApostolica.UI.Registros
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Persona";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -112,7 +116,6 @@ namespace ActividadesApostolica.UI.Registros
             this.ContribucionTextBox.Name = "ContribucionTextBox";
             this.ContribucionTextBox.Size = new System.Drawing.Size(211, 27);
             this.ContribucionTextBox.TabIndex = 7;
-            this.ContribucionTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -138,6 +141,7 @@ namespace ActividadesApostolica.UI.Registros
             this.BuscarButton.TabIndex = 10;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // NuevoButton
             // 
@@ -147,6 +151,7 @@ namespace ActividadesApostolica.UI.Registros
             this.NuevoButton.TabIndex = 11;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -156,6 +161,7 @@ namespace ActividadesApostolica.UI.Registros
             this.GuardarButton.TabIndex = 12;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // ElimarButton
             // 
@@ -165,12 +171,36 @@ namespace ActividadesApostolica.UI.Registros
             this.ElimarButton.TabIndex = 13;
             this.ElimarButton.Text = "Eliminar";
             this.ElimarButton.UseVisualStyleBackColor = true;
+            this.ElimarButton.Click += new System.EventHandler(this.ElimarButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(377, 48);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(164, 27);
+            this.FechaDateTimePicker.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(388, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Fecha";
             // 
             // rAportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 408);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.ElimarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.NuevoButton);
@@ -188,6 +218,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Name = "rAportes";
             this.Text = "rAportes";
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +240,8 @@ namespace ActividadesApostolica.UI.Registros
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button ElimarButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

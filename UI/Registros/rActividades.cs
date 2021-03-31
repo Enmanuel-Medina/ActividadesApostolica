@@ -38,7 +38,7 @@ namespace ActividadesApostolica.UI.Registros
         {
             NumericUpDown.Value = actividad.ActividadId;
             DescriccionTextBox.Text = actividad.Descripcion;
-            
+
         }
 
         private bool Validar()

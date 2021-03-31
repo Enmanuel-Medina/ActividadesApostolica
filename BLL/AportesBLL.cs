@@ -10,15 +10,18 @@ using System.Threading.Tasks;
 
 namespace ActividadesApostolica.BLL
 {
-   public class AportesBLL
+    public class AportesBLL
     {
 
         public static bool Guardar(Aportes aportes)
         {
             bool paso = false;
             Contexto db = new Contexto();
+            var Colecta = ColectasBLL.Buscar(aportes.ColectaId);
             try
             {
+                Colecta.Logrado += aportes.Contribucion;
+
                 if (db.Aportes.Add(aportes) != null)
                     paso = db.SaveChanges() > 0;
             }
@@ -37,8 +40,14 @@ namespace ActividadesApostolica.BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
+            Aportes aporteAnterior = AportesBLL.Buscar(aportes.AportesId);
+            var Colecta = ColectasBLL.Buscar(aportes.ColectaId);
+
             try
             {
+                Colecta.Logrado -= aporteAnterior.Contribucion;
+                Colecta.Logrado += aportes.Contribucion;
+
                 db.Entry(aportes).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
@@ -79,8 +88,12 @@ namespace ActividadesApostolica.BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
+            Aportes Aportes = Buscar(id);
+            var Colecta = ColectasBLL.Buscar(Aportes.ColectaId);
             try
             {
+                Colecta.Logrado -= Aportes.Contribucion;
+
                 var eliminar = db.Aportes.Find(id);
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = db.SaveChanges() > 0;
@@ -138,4 +151,4 @@ namespace ActividadesApostolica.BLL
 }
 
 
- 
+

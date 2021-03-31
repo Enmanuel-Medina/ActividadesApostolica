@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ActividadesApostolica.BLL
 {
-   public class ActividadesBLL
+    public class ActividadesBLL
     {
         public static bool Guardar(Actividades actividad)
         {
@@ -135,4 +135,3 @@ namespace ActividadesApostolica.BLL
     }
 
 }
-

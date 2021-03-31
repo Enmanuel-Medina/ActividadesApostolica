@@ -29,7 +29,6 @@ namespace ActividadesApostolica.UI.Consultas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cActividades));
             this.CategoriasConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.CriterioLabel = new System.Windows.Forms.Label();
@@ -188,7 +187,6 @@ namespace ActividadesApostolica.UI.Consultas
             this.Controls.Add(this.HastaLabel);
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.DesdeLabel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "cActividades";
             this.Text = "Consulta actividades";

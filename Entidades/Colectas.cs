@@ -12,7 +12,11 @@ namespace ActividadesApostolica.Entidades
 
         public string Descripcion { get; set; }
 
-        public int Meta { get; set; }
+        public double Meta { get; set; }
+
+        public double Logrado { get; set; }
+
+
 
         public DateTime Vence { get; set; }
     }
