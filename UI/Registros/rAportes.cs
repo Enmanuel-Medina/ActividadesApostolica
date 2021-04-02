@@ -33,7 +33,7 @@ namespace ActividadesApostolica.UI.Registros
         {
             Aportes aportes = new Aportes();
             aportes.AportesId = Convert.ToInt32(IdNumericUpDown.Value);
-            aportes.Meta = Convert.ToInt32(MetaComboBox.SelectedValue);
+         
             aportes.Persona = Convert.ToInt32(PersonaComboBox.SelectedValue);
             aportes.Fecha = FechaDateTimePicker.Value;
             
@@ -44,7 +44,7 @@ namespace ActividadesApostolica.UI.Registros
         private void LLenaCampo(Aportes aportes)
         {
             IdNumericUpDown.Value = aportes.AportesId;
-            MetaComboBox.SelectedValue = aportes.Meta;
+            
             PersonaComboBox.SelectedValue = aportes.Persona;
             FechaDateTimePicker.Value = aportes.Fecha;
         }

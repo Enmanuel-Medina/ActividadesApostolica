@@ -39,20 +39,20 @@ namespace ActividadesApostolica.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Contribucion")
+                    b.Property<int>("ColectaId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Contribucion")
+                        .HasColumnType("REAL");
 
-                    b.Property<string>("Meta")
+                    b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Persona")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Resta")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Resta")
+                        .HasColumnType("REAL");
 
                     b.HasKey("AportesId");
 
@@ -131,8 +131,11 @@ namespace ActividadesApostolica.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Meta")
-                        .HasColumnType("INTEGER");
+                    b.Property<double>("Logrado")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Meta")
+                        .HasColumnType("REAL");
 
                     b.Property<DateTime>("Vence")
                         .HasColumnType("TEXT");
@@ -233,7 +236,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 3, 29, 17, 0, 4, 218, DateTimeKind.Local).AddTicks(9289),
+                            Fecha = new DateTime(2021, 4, 2, 15, 13, 30, 3, DateTimeKind.Local).AddTicks(9250),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

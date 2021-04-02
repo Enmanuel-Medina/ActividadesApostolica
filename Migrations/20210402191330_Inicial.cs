@@ -28,10 +28,10 @@ namespace ActividadesApostolica.Migrations
                     AportesId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Meta = table.Column<string>(type: "TEXT", nullable: true),
+                    ColectaId = table.Column<int>(type: "INTEGER", nullable: false),
                     Persona = table.Column<int>(type: "INTEGER", nullable: false),
-                    Contribucion = table.Column<int>(type: "INTEGER", nullable: false),
-                    Resta = table.Column<int>(type: "INTEGER", nullable: false)
+                    Contribucion = table.Column<double>(type: "REAL", nullable: false),
+                    Resta = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,7 +64,8 @@ namespace ActividadesApostolica.Migrations
                     ColectasId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(type: "TEXT", nullable: true),
-                    Meta = table.Column<int>(type: "INTEGER", nullable: false),
+                    Meta = table.Column<double>(type: "REAL", nullable: false),
+                    Logrado = table.Column<double>(type: "REAL", nullable: false),
                     Vence = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -143,7 +144,7 @@ namespace ActividadesApostolica.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "UsuarioId", "Apellidos", "Celular", "ClaveConfirmada", "ClaveUsuario", "Direccion", "Email", "Fecha", "NombreUsuario", "Nombres", "Telefono", "TipoUsuario" },
-                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 3, 29, 17, 0, 4, 218, DateTimeKind.Local).AddTicks(9289), "Admin", "Admin", "0123456789", "Administrador" });
+                values: new object[] { 1, "Admin", "0123456789", "admin", "admin", "Admin", "Admin@hotmail.com", new DateTime(2021, 4, 2, 15, 13, 30, 3, DateTimeKind.Local).AddTicks(9250), "Admin", "Admin", "0123456789", "Administrador" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AsistenciasDetalle_AsistenciasAsistenciaId",

@@ -14,14 +14,15 @@ namespace ActividadesApostolica.Entidades
 
         public int ColectaId { get; set; }
 
-        public int Meta { get; set; }
-
         public int Persona { get; set; }
 
-        public int Contribucion { get; set; }
+        public double Contribucion { get; set; }
 
-        public int Resta { get; set; }
+        public double Resta { get; set; }
 
+        public Aportes()
+        {
+        }
     }
 }
 
