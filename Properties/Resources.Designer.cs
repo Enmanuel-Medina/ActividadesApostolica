@@ -63,9 +63,29 @@ namespace ActividadesApostolica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4k_naruto_wallpaper_10010979 {
+            get {
+                object obj = ResourceManager.GetObject("4k-naruto-wallpaper-10010979", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apostolica {
             get {
                 object obj = ResourceManager.GetObject("apostolica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap art01 {
+            get {
+                object obj = ResourceManager.GetObject("art01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

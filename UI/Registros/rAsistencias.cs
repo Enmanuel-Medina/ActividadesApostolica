@@ -69,7 +69,7 @@ namespace ActividadesApostolica.UI.Registros
 
         private void ActividadComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PersonaComboBox.ResetText();
+            ActividadComboBox.ResetText();
         }
 
         private void PersonaComboBox_SelectedIndexChanged(object sender, EventArgs e)

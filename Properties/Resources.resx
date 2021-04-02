@@ -121,10 +121,16 @@
   <data name="apostolica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apostolica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pentecostes-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pentecostes-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pentecostes-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pentecostes-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4k-naruto-wallpaper-10010979" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4k-naruto-wallpaper-10010979.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="art01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\art01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

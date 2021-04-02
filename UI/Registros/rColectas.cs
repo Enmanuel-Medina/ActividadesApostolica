@@ -34,8 +34,7 @@ namespace ActividadesApostolica.UI.Registros
             colectas.ColectasId = Convert.ToInt32(IdNumericUpDown.Value);
             colectas.Descripcion = DescripcionTextBox.Text;
             colectas.Meta = Convert.ToDouble(MetaTextBox.Text);
-            colectas.Logrado = Convert.ToDouble(LogradoTextBox.Text);
-          
+
             return colectas;
         }
 
@@ -43,7 +42,8 @@ namespace ActividadesApostolica.UI.Registros
         {
             IdNumericUpDown.Value = colectas.ColectasId;
             DescripcionTextBox.Text = colectas.Descripcion;
-
+            MetaTextBox.Text = colectas.Meta.ToString();
+            LogradoTextBox.Text = colectas.Logrado.ToString();
         }
 
         private bool Validar()
@@ -143,4 +143,6 @@ namespace ActividadesApostolica.UI.Registros
         }
     }
 }
+
+
 

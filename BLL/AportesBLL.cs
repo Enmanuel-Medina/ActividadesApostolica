@@ -20,10 +20,13 @@ namespace ActividadesApostolica.BLL
             var Colecta = ColectasBLL.Buscar(aportes.ColectaId);
             try
             {
-                Colecta.Logrado += aportes.Contribucion;
 
                 if (db.Aportes.Add(aportes) != null)
+                {
+                    Colecta.Logrado += aportes.Contribucion;
+                    ColectasBLL.Modificar(Colecta);
                     paso = db.SaveChanges() > 0;
+                }
             }
             catch (Exception)
             {
@@ -45,10 +48,12 @@ namespace ActividadesApostolica.BLL
 
             try
             {
+                db.Entry(aportes).State = EntityState.Modified;
+
                 Colecta.Logrado -= aporteAnterior.Contribucion;
                 Colecta.Logrado += aportes.Contribucion;
+                ColectasBLL.Modificar(Colecta);
 
-                db.Entry(aportes).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -92,10 +97,12 @@ namespace ActividadesApostolica.BLL
             var Colecta = ColectasBLL.Buscar(Aportes.ColectaId);
             try
             {
-                Colecta.Logrado -= Aportes.Contribucion;
-
                 var eliminar = db.Aportes.Find(id);
                 db.Entry(eliminar).State = EntityState.Deleted;
+
+                Colecta.Logrado -= Aportes.Contribucion;
+                ColectasBLL.Modificar(Colecta);
+
                 paso = db.SaveChanges() > 0;
             }
             catch (Exception)
@@ -149,6 +156,7 @@ namespace ActividadesApostolica.BLL
     }
 
 }
+
 
 
 

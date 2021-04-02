@@ -121,6 +121,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             this.LogradoTextBox.Location = new System.Drawing.Point(283, 215);
             this.LogradoTextBox.Name = "LogradoTextBox";
+            this.LogradoTextBox.ReadOnly = true;
             this.LogradoTextBox.Size = new System.Drawing.Size(159, 27);
             this.LogradoTextBox.TabIndex = 10;
             // 

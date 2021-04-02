@@ -19,6 +19,31 @@ namespace ActividadesApostolica.UI.Registros
             InitializeComponent();
         }
 
+        private void LLenarComboMeta()
+        {
+            var ListaColectas = ColectasBLL.GetList(p => true);
+
+            MetaComboBox.DataSource = ListaColectas;
+            MetaComboBox.ValueMember = "ColectasId";
+            MetaComboBox.DisplayMember = "Descripcion";
+        }
+
+        private void LlenarComboPersonas()
+        {
+            var ListaPersonas = PersonasBLL.GetList(p => true);
+
+            PersonaComboBox.DataSource = ListaPersonas;
+            PersonaComboBox.ValueMember = "PersonaId";
+            PersonaComboBox.DisplayMember = "Nombres";
+        }
+
+        private void rAportes_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+            LlenarComboPersonas();
+            LLenarComboMeta();
+        }
+
         private void Limpiar()
         {
             MyErrorProvider.Clear();
@@ -33,10 +58,11 @@ namespace ActividadesApostolica.UI.Registros
         {
             Aportes aportes = new Aportes();
             aportes.AportesId = Convert.ToInt32(IdNumericUpDown.Value);
-         
+            aportes.ColectaId = Convert.ToInt32(MetaComboBox.SelectedValue);
             aportes.Persona = Convert.ToInt32(PersonaComboBox.SelectedValue);
+            aportes.Contribucion = Convert.ToDouble(ContribucionTextBox.Text);
             aportes.Fecha = FechaDateTimePicker.Value;
-            
+
 
             return aportes;
         }
@@ -44,14 +70,24 @@ namespace ActividadesApostolica.UI.Registros
         private void LLenaCampo(Aportes aportes)
         {
             IdNumericUpDown.Value = aportes.AportesId;
-            
+            MetaComboBox.SelectedValue = aportes.ColectaId;
             PersonaComboBox.SelectedValue = aportes.Persona;
+            ContribucionTextBox.Text = aportes.Contribucion.ToString();
             FechaDateTimePicker.Value = aportes.Fecha;
         }
 
         private bool Validar()
         {
             bool paso = true;
+            var colecta = ColectasBLL.Buscar(Convert.ToInt32(MetaComboBox.SelectedValue));
+
+
+            if (Convert.ToDouble(ContribucionTextBox.Text) + colecta.Logrado > colecta.Meta)
+            {
+                MyErrorProvider.SetError(ContribucionTextBox, "La contribucion excede la cantiadad faltante");
+                ContribucionTextBox.Focus();
+                paso = false;
+            }
 
             if (string.IsNullOrWhiteSpace(PersonaComboBox.Text))
             {
@@ -144,6 +180,27 @@ namespace ActividadesApostolica.UI.Registros
 
 
         }
-    }
+
+        private void ContribucionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var colecta = ColectasBLL.Buscar(Convert.ToInt32(MetaComboBox.SelectedValue));
+            double contribucion = 0;
+
+            if (!string.IsNullOrWhiteSpace(ContribucionTextBox.Text))
+            {
+                contribucion = Convert.ToDouble(ContribucionTextBox.Text);
+            }
+
+            if (colecta != null)
+                RestaTextBox.Text = (colecta.Meta - contribucion).ToString();
+
+        }
+
+        private void MetaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MetaComboBox.ResetText();
+        }
+    } 
 
 }
+

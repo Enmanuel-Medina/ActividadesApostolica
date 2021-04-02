@@ -36,11 +36,11 @@ namespace ActividadesApostolica
             this.AsistenciaStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ColectasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AportesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActividadStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PersonaStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsuarioStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AportesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +102,12 @@ namespace ActividadesApostolica
             this.ColectasStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.ColectasStripMenuItem.Text = "Colectas";
             // 
+            // AportesStripMenuItem
+            // 
+            this.AportesStripMenuItem.Name = "AportesStripMenuItem";
+            this.AportesStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.AportesStripMenuItem.Text = "Aportes";
+            // 
             // ConsultasStripMenuItem
             // 
             this.ConsultasStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -130,16 +136,11 @@ namespace ActividadesApostolica
             this.UsuarioStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.UsuarioStripMenuItem.Text = "Usuarios";
             // 
-            // AportesStripMenuItem
-            // 
-            this.AportesStripMenuItem.Name = "AportesStripMenuItem";
-            this.AportesStripMenuItem.Size = new System.Drawing.Size(169, 26);
-            this.AportesStripMenuItem.Text = "Aportes";
-            // 
             // MainForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ActividadesApostolica.Properties.Resources.art01;
             this.ClientSize = new System.Drawing.Size(1162, 606);
             this.Controls.Add(this.MenuStrip);
             this.IsMdiContainer = true;

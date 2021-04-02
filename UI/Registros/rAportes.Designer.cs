@@ -1,4 +1,6 @@
 ﻿
+
+
 namespace ActividadesApostolica.UI.Registros
 {
     partial class rAportes
@@ -96,6 +98,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // MetaComboBox
             // 
+            this.MetaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MetaComboBox.FormattingEnabled = true;
             this.MetaComboBox.Location = new System.Drawing.Point(29, 115);
             this.MetaComboBox.Name = "MetaComboBox";
@@ -104,6 +107,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // PersonaComboBox
             // 
+            this.PersonaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PersonaComboBox.FormattingEnabled = true;
             this.PersonaComboBox.Location = new System.Drawing.Point(29, 185);
             this.PersonaComboBox.Name = "PersonaComboBox";
@@ -120,7 +124,7 @@ namespace ActividadesApostolica.UI.Registros
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 239);
+            this.label5.Location = new System.Drawing.Point(295, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 8;
@@ -130,6 +134,7 @@ namespace ActividadesApostolica.UI.Registros
             // 
             this.RestaTextBox.Location = new System.Drawing.Point(295, 262);
             this.RestaTextBox.Name = "RestaTextBox";
+            this.RestaTextBox.ReadOnly = true;
             this.RestaTextBox.Size = new System.Drawing.Size(246, 27);
             this.RestaTextBox.TabIndex = 9;
             // 
