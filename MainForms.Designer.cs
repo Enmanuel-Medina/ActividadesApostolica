@@ -43,6 +43,7 @@ namespace ActividadesApostolica
             this.UsuarioStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAportesStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cColectasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cAsistenciasStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +116,7 @@ namespace ActividadesApostolica
             this.ConsultasStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActividadStripMenuItem,
             this.PersonaStripMenuItem,
+            this.cAsistenciasStripMenuItem,
             this.UsuarioStripMenuItem,
             this.cAportesStripMenuItem,
             this.cColectasStripMenuItem});
@@ -152,6 +154,12 @@ namespace ActividadesApostolica
             this.cColectasStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.cColectasStripMenuItem.Text = "Colectas";
             // 
+            // cAsistenciasStripMenuItem
+            // 
+            this.cAsistenciasStripMenuItem.Name = "cAsistenciasStripMenuItem";
+            this.cAsistenciasStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.cAsistenciasStripMenuItem.Text = "Asistencias";
+            // 
             // MainForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -187,5 +195,6 @@ namespace ActividadesApostolica
         private System.Windows.Forms.ToolStripMenuItem AportesStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cAportesStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cColectasStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cAsistenciasStripMenuItem;
     }
 }
