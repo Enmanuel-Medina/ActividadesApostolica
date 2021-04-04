@@ -127,11 +127,14 @@ namespace ActividadesApostolica.UI.Consultas
             // 
             // BuscarButton
             // 
+            this.BuscarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(730, 19);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(94, 78);
             this.BuscarButton.TabIndex = 9;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
@@ -151,7 +154,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.UsarCheckBox);
             this.Name = "cPersonas";
-            this.Text = "cPersonas";
+            this.Text = "Consulta personas";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

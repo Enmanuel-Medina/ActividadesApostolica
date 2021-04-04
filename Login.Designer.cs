@@ -30,6 +30,7 @@ namespace ActividadesApostolica
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.UsuarioTextBox = new System.Windows.Forms.TextBox();
             this.ContrasenaTextBox = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@ namespace ActividadesApostolica
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(394, 27);
             this.UsuarioTextBox.TabIndex = 1;
-           
             // 
             // ContrasenaTextBox
             // 
@@ -113,6 +113,7 @@ namespace ActividadesApostolica
             this.Controls.Add(this.ContrasenaTextBox);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

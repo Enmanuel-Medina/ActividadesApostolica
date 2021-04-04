@@ -30,6 +30,7 @@ namespace ActividadesApostolica.UI.Registros
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rPersonas));
             this.label12 = new System.Windows.Forms.Label();
             this.AsistenciaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -156,12 +157,15 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // BuscarAsistenciaButton
             // 
+            this.BuscarAsistenciaButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
+            this.BuscarAsistenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarAsistenciaButton.Location = new System.Drawing.Point(173, 57);
             this.BuscarAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BuscarAsistenciaButton.Name = "BuscarAsistenciaButton";
-            this.BuscarAsistenciaButton.Size = new System.Drawing.Size(135, 33);
+            this.BuscarAsistenciaButton.Size = new System.Drawing.Size(96, 41);
             this.BuscarAsistenciaButton.TabIndex = 37;
             this.BuscarAsistenciaButton.Text = "Buscar";
+            this.BuscarAsistenciaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarAsistenciaButton.UseVisualStyleBackColor = true;
             this.BuscarAsistenciaButton.Click += new System.EventHandler(this.BuscarAsistenciaButton_Click);
             // 
@@ -228,41 +232,49 @@ namespace ActividadesApostolica.UI.Registros
             this.IdNumericUpDown.Name = "IdNumericUpDown";
             this.IdNumericUpDown.Size = new System.Drawing.Size(152, 27);
             this.IdNumericUpDown.TabIndex = 30;
-           
             // 
             // EliminarAsistenciaButton
             // 
             this.EliminarAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EliminarAsistenciaButton.Location = new System.Drawing.Point(434, 602);
+            this.EliminarAsistenciaButton.Image = global::ActividadesApostolica.Properties.Resources.eliminar;
+            this.EliminarAsistenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarAsistenciaButton.Location = new System.Drawing.Point(421, 602);
             this.EliminarAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EliminarAsistenciaButton.Name = "EliminarAsistenciaButton";
-            this.EliminarAsistenciaButton.Size = new System.Drawing.Size(135, 39);
+            this.EliminarAsistenciaButton.Size = new System.Drawing.Size(115, 39);
             this.EliminarAsistenciaButton.TabIndex = 54;
             this.EliminarAsistenciaButton.Text = "Eliminar";
+            this.EliminarAsistenciaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarAsistenciaButton.UseVisualStyleBackColor = true;
             this.EliminarAsistenciaButton.Click += new System.EventHandler(this.EliminarAsistenciaButton_Click);
             // 
             // GuardarAsistenciaButton
             // 
             this.GuardarAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GuardarAsistenciaButton.Location = new System.Drawing.Point(262, 602);
+            this.GuardarAsistenciaButton.Image = global::ActividadesApostolica.Properties.Resources.Guardar;
+            this.GuardarAsistenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarAsistenciaButton.Location = new System.Drawing.Point(298, 602);
             this.GuardarAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GuardarAsistenciaButton.Name = "GuardarAsistenciaButton";
-            this.GuardarAsistenciaButton.Size = new System.Drawing.Size(135, 39);
+            this.GuardarAsistenciaButton.Size = new System.Drawing.Size(117, 39);
             this.GuardarAsistenciaButton.TabIndex = 53;
             this.GuardarAsistenciaButton.Text = "Guardar";
+            this.GuardarAsistenciaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarAsistenciaButton.UseVisualStyleBackColor = true;
             this.GuardarAsistenciaButton.Click += new System.EventHandler(this.GuardarAsistenciaButton_Click);
             // 
             // NuevoAsistenciaButton
             // 
             this.NuevoAsistenciaButton.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NuevoAsistenciaButton.Location = new System.Drawing.Point(93, 602);
+            this.NuevoAsistenciaButton.Image = global::ActividadesApostolica.Properties.Resources.Nuevo;
+            this.NuevoAsistenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoAsistenciaButton.Location = new System.Drawing.Point(192, 602);
             this.NuevoAsistenciaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NuevoAsistenciaButton.Name = "NuevoAsistenciaButton";
-            this.NuevoAsistenciaButton.Size = new System.Drawing.Size(135, 39);
+            this.NuevoAsistenciaButton.Size = new System.Drawing.Size(100, 39);
             this.NuevoAsistenciaButton.TabIndex = 52;
             this.NuevoAsistenciaButton.Text = "Nuevo";
+            this.NuevoAsistenciaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoAsistenciaButton.UseVisualStyleBackColor = true;
             this.NuevoAsistenciaButton.Click += new System.EventHandler(this.NuevoAsistenciaButton_Click);
             // 
@@ -327,6 +339,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Controls.Add(this.ApellidosTextBox);
             this.Controls.Add(this.NombresTextBox);
             this.Controls.Add(this.IdNumericUpDown);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "rPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

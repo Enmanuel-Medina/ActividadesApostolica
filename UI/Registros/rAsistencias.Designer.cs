@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rAsistencias));
             this.label1 = new System.Windows.Forms.Label();
             this.IdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -122,41 +123,53 @@
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(523, 732);
+            this.EliminarButton.Image = global::ActividadesApostolica.Properties.Resources.eliminar;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(532, 732);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(94, 29);
+            this.EliminarButton.Size = new System.Drawing.Size(95, 42);
             this.EliminarButton.TabIndex = 11;
             this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Image = global::ActividadesApostolica.Properties.Resources.Guardar;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(423, 732);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(94, 29);
+            this.GuardarButton.Size = new System.Drawing.Size(103, 42);
             this.GuardarButton.TabIndex = 10;
             this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Image = global::ActividadesApostolica.Properties.Resources.Nuevo;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NuevoButton.Location = new System.Drawing.Point(323, 732);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(94, 29);
+            this.NuevoButton.Size = new System.Drawing.Size(94, 42);
             this.NuevoButton.TabIndex = 9;
             this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // BuscarButton
             // 
-            this.BuscarButton.Location = new System.Drawing.Point(180, 48);
+            this.BuscarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(180, 41);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(94, 29);
+            this.BuscarButton.Size = new System.Drawing.Size(94, 36);
             this.BuscarButton.TabIndex = 8;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
@@ -375,7 +388,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 773);
+            this.ClientSize = new System.Drawing.Size(929, 791);
             this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -389,6 +402,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.IdNumericUpDown);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rAsistencias";
             this.Text = "Registro de asistencias";
             this.Load += new System.EventHandler(this.rAsistencias_Load);

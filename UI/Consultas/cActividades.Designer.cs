@@ -150,6 +150,7 @@ namespace ActividadesApostolica.UI.Consultas
             // ConsultarButton
             // 
             this.ConsultarButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ConsultarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(691, 45);
             this.ConsultarButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -157,7 +158,6 @@ namespace ActividadesApostolica.UI.Consultas
             this.ConsultarButton.Size = new System.Drawing.Size(114, 55);
             this.ConsultarButton.TabIndex = 40;
             this.ConsultarButton.Text = "Buscar";
-            this.ConsultarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ConsultarButton.UseVisualStyleBackColor = true;
             this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
             // 

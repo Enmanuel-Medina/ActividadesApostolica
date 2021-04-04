@@ -60,11 +60,14 @@ namespace ActividadesApostolica.UI.Consultas
             // BuscarButton
             // 
             this.BuscarButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BuscarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BuscarButton.Location = new System.Drawing.Point(926, 25);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(115, 86);
             this.BuscarButton.TabIndex = 1;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BuscarButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);

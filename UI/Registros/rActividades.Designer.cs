@@ -36,6 +36,7 @@ namespace ActividadesApostolica.UI.Registros
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rActividades));
             this.NumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,41 +85,53 @@ namespace ActividadesApostolica.UI.Registros
             // 
             // BuscarButton
             // 
-            this.BuscarButton.Location = new System.Drawing.Point(212, 52);
+            this.BuscarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(202, 52);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(94, 29);
+            this.BuscarButton.Size = new System.Drawing.Size(104, 42);
             this.BuscarButton.TabIndex = 4;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // NuevoButton
             // 
+            this.NuevoButton.Image = global::ActividadesApostolica.Properties.Resources.Nuevo;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NuevoButton.Location = new System.Drawing.Point(12, 186);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(94, 29);
+            this.NuevoButton.Size = new System.Drawing.Size(94, 40);
             this.NuevoButton.TabIndex = 5;
             this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Image = global::ActividadesApostolica.Properties.Resources.Guardar;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(112, 186);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(94, 29);
+            this.GuardarButton.Size = new System.Drawing.Size(104, 40);
             this.GuardarButton.TabIndex = 6;
             this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
-            this.EliminarButton.Location = new System.Drawing.Point(212, 186);
+            this.EliminarButton.Image = global::ActividadesApostolica.Properties.Resources.eliminar;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(222, 186);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(94, 29);
+            this.EliminarButton.Size = new System.Drawing.Size(94, 40);
             this.EliminarButton.TabIndex = 7;
             this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
@@ -139,6 +152,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumericUpDown);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rActividades";
             this.Text = "Registro de Actividades";
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();

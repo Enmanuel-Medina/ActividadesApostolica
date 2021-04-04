@@ -47,7 +47,7 @@ namespace ActividadesApostolica.UI.Consultas
             // 
             this.ConsultaDataGridView.AllowUserToAddRows = false;
             this.ConsultaDataGridView.AllowUserToDeleteRows = false;
-            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDataGridView.Location = new System.Drawing.Point(26, 228);
@@ -156,6 +156,7 @@ namespace ActividadesApostolica.UI.Consultas
             // ConsultarButton
             // 
             this.ConsultarButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ConsultarButton.Image = global::ActividadesApostolica.Properties.Resources.Buscar1;
             this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(854, 46);
             this.ConsultarButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
