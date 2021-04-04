@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DATA\ActividadesApostolicas.db-shm" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DATA\" />
   </ItemGroup>
 

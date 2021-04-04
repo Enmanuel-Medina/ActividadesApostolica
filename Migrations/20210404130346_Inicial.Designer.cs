@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ActividadesApostolica.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210402191330_Inicial")]
+    [Migration("20210404130346_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -238,7 +238,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 4, 2, 15, 13, 30, 3, DateTimeKind.Local).AddTicks(9250),
+                            Fecha = new DateTime(2021, 4, 4, 9, 3, 46, 296, DateTimeKind.Local).AddTicks(9927),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",

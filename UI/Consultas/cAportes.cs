@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace ActividadesApostolica.UI.Consultas
 {
-    public partial class cActividades : Form
+    public partial class cAportes : Form
     {
-        List<Actividades> lista = new List<Actividades>();
-        public cActividades()
+        List<Aportes> lista = new List<Aportes>();
+        public cAportes()
         {
             InitializeComponent();
         }
+
 
         private void ConsultarButton_Click(object sender, EventArgs e)
         {
@@ -29,17 +30,17 @@ namespace ActividadesApostolica.UI.Consultas
                 {
                     switch (FiltroComboBox.SelectedIndex)
                     {
-                        case 0: //Actividades
-                            lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text) && (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
+                        case 0: //Aportes
+                            lista = AportesBLL.GetList(r => r.AportesId == Utilidades.ToInt(CriterioTextBox.Text) && (r.Fecha >= DesdeDateTimePicker.Value && r.Fecha <= HastaDateTimePicker.Value));
                             break;
-                        case 1: //Descripcion
-                            lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text) && (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
+                        case 1: //Persona
+                            lista = AportesBLL.GetList(r => r.Persona == Utilidades.ToInt(CriterioTextBox.Text)); 
                             break;
                     }
 
                 }
                 else
-                    lista = ActividadesBLL.GetList(r => (r.FechaCreacion >= DesdeDateTimePicker.Value && r.FechaCreacion <= HastaDateTimePicker.Value));
+                    lista = AportesBLL.GetList(r => (r.Fecha >= DesdeDateTimePicker.Value && r.Fecha <= HastaDateTimePicker.Value));
             }
             else
             {
@@ -47,22 +48,24 @@ namespace ActividadesApostolica.UI.Consultas
                 {
                     switch (FiltroComboBox.SelectedIndex)
                     {
-                        case 0: //AcvidadId
-                            lista = ActividadesBLL.GetList(r => r.ActividadId == Utilidades.ToInt(CriterioTextBox.Text));
+                        case 0: //Aportes
+                            lista = AportesBLL.GetList(r => r.AportesId == Utilidades.ToInt(CriterioTextBox.Text));
                             break;
-                        case 1: //Descripciom
-                            lista = ActividadesBLL.GetList(r => r.Descripcion.Contains(CriterioTextBox.Text));
+                        case 1: //Persona
+                            lista = AportesBLL.GetList(r => r.Persona == Utilidades.ToInt(CriterioTextBox.Text));
                             break;
                     }
                 }
                 //En caso de que no haya nada en el textBo
                 else
-                    lista = ActividadesBLL.GetList(r => true);
+                    lista = AportesBLL.GetList(r => true);
             }
 
 
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = lista;
         }
+
     }
 }
+

@@ -1,7 +1,7 @@
 ﻿
 namespace ActividadesApostolica.UI.Consultas
 {
-    partial class cActividades
+    partial class cColectas
     {
         /// <summary>
         /// Required designer variable.
@@ -171,7 +171,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.FechaCheckBox.Text = "Usar filtro de fecha";
             this.FechaCheckBox.UseVisualStyleBackColor = true;
             // 
-            // cActividades
+            // cColectas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +188,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.Controls.Add(this.DesdeDateTimePicker);
             this.Controls.Add(this.DesdeLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "cActividades";
+            this.Name = "cColectas";
             this.Text = "Consulta actividades";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
