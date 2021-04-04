@@ -37,13 +37,6 @@ namespace ActividadesApostolica.UI.Registros
             PersonaComboBox.DisplayMember = "Nombres";
         }
 
-        private void rAportes_Load(object sender, EventArgs e)
-        {
-            Limpiar();
-            LlenarComboPersonas();
-            LLenarComboMeta();
-        }
-
         private void Limpiar()
         {
             MyErrorProvider.Clear();
@@ -104,6 +97,12 @@ namespace ActividadesApostolica.UI.Registros
             return (aportes != null);
         }
 
+        private void rAportes_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+            LlenarComboPersonas();
+            LLenarComboMeta();
+        }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
@@ -115,7 +114,10 @@ namespace ActividadesApostolica.UI.Registros
             aportes = AportesBLL.Buscar(id);
 
             if (aportes != null)
+            {
                 LLenaCampo(aportes);
+                MetaComboBox.SelectedItem = aportes.ColectaId;
+            }
             else
                 MessageBox.Show("Aportes no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -181,10 +183,27 @@ namespace ActividadesApostolica.UI.Registros
 
         }
 
+        private void MetaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MetaComboBox.ResetText();
+        }
+
         private void ContribucionTextBox_TextChanged(object sender, EventArgs e)
         {
-            var colecta = ColectasBLL.Buscar(Convert.ToInt32(MetaComboBox.SelectedValue));
-            double contribucion = 0;
+            Colectas colecta;
+            double contribucion;
+
+            if (IdNumericUpDown.Value == 0)
+            {
+                colecta = ColectasBLL.Buscar(Convert.ToInt32(MetaComboBox.SelectedValue));
+                contribucion = 0;
+            }
+            else
+            {
+                var aporte = AportesBLL.Buscar((int)IdNumericUpDown.Value);
+                colecta = ColectasBLL.Buscar(aporte.ColectaId);
+                contribucion = 0;
+            }
 
             if (!string.IsNullOrWhiteSpace(ContribucionTextBox.Text))
             {
@@ -193,14 +212,9 @@ namespace ActividadesApostolica.UI.Registros
 
             if (colecta != null)
                 RestaTextBox.Text = (colecta.Meta - contribucion).ToString();
-
         }
-
-        private void MetaComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MetaComboBox.ResetText();
-        }
-    } 
+    }
 
 }
+
 

@@ -120,6 +120,7 @@ namespace ActividadesApostolica.UI.Registros
             this.ContribucionTextBox.Name = "ContribucionTextBox";
             this.ContribucionTextBox.Size = new System.Drawing.Size(211, 27);
             this.ContribucionTextBox.TabIndex = 7;
+            this.ContribucionTextBox.TextChanged += new System.EventHandler(this.ContribucionTextBox_TextChanged);
             // 
             // label5
             // 
@@ -222,6 +223,7 @@ namespace ActividadesApostolica.UI.Registros
             this.Controls.Add(this.label1);
             this.Name = "rAportes";
             this.Text = "rAportes";
+            this.Load += new System.EventHandler(this.rAportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);

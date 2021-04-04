@@ -47,7 +47,7 @@ namespace ActividadesApostolica.UI.Consultas
             // 
             this.ConsultaDataGridView.AllowUserToAddRows = false;
             this.ConsultaDataGridView.AllowUserToDeleteRows = false;
-            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ConsultaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDataGridView.Location = new System.Drawing.Point(26, 228);
@@ -85,10 +85,11 @@ namespace ActividadesApostolica.UI.Consultas
             this.FiltroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
-            "Todo",
             "Id",
-            "Profesor",
-            "Cantidad total de estudiantes"});
+            "Actividad",
+            "Cantidad presente",
+            "Cantidad ausente",
+            "Cantidad excusa"});
             this.FiltroComboBox.Location = new System.Drawing.Point(175, 167);
             this.FiltroComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FiltroComboBox.Name = "FiltroComboBox";
@@ -163,7 +164,7 @@ namespace ActividadesApostolica.UI.Consultas
             this.ConsultarButton.TabIndex = 40;
             this.ConsultarButton.Text = "Buscar";
             this.ConsultarButton.UseVisualStyleBackColor = true;
-            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click_1);
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
             // 
             // FechacCheckBox
             // 

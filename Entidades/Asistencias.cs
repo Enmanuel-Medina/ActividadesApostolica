@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,8 +16,6 @@ namespace ActividadesApostolica.Entidades
 
         public DateTime Fecha { get; set; }
 
-        public int PersonaId { get; set; }
-
         public int CantidadPresentes { get; set; }
 
         public int CantidadAusentes { get; set; }
@@ -26,7 +23,7 @@ namespace ActividadesApostolica.Entidades
         public int CantidadExcusas { get; set; }
 
         public int UsuarioId { get; set; }
-        
+
 
 
         public virtual List<AsistenciasDetalle> AsistenciasDetalle { get; set; }
@@ -36,7 +33,6 @@ namespace ActividadesApostolica.Entidades
             AsistenciaId = 0;
             ActividadId = 0;
             Fecha = DateTime.Now;
-            PersonaId = 0;
             CantidadPresentes = 0;
             CantidadAusentes = 0;
             CantidadExcusas = 0;

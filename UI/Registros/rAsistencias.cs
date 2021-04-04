@@ -45,9 +45,9 @@ namespace ActividadesApostolica.UI.Registros
 
             asistencia.AsistenciaId = Convert.ToInt32(IdNumericUpDown.Value);
             asistencia.ActividadId = Convert.ToInt32(ActividadComboBox.SelectedValue);
-            asistencia.PersonaId = Convert.ToInt32(PersonaComboBox.SelectedValue);
             asistencia.Fecha = FechaDateTimePicker.Value;
             asistencia.AsistenciasDetalle = this.Detalle;
+            asistencia.UsuarioId = Login.UsuarioId;
 
             return asistencia;
         }
@@ -56,11 +56,11 @@ namespace ActividadesApostolica.UI.Registros
         {
             IdNumericUpDown.Value = asistencia.AsistenciaId;
             ActividadComboBox.SelectedValue = asistencia.ActividadId;
-            PersonaComboBox.SelectedValue = asistencia.PersonaId;
             FechaDateTimePicker.Value = asistencia.Fecha;
             PresentesTextBox.Text = Convert.ToString(asistencia.CantidadPresentes);
             AusentesTextBox.Text = Convert.ToString(asistencia.CantidadAusentes);
             ExcusasTextBox.Text = Convert.ToString(asistencia.CantidadExcusas);
+            UsuarioTextBox.Text = UsuariosBLL.Buscar(asistencia.UsuarioId).Nombres;
 
             this.Detalle = asistencia.AsistenciasDetalle;
             CargarGrid();
@@ -114,14 +114,14 @@ namespace ActividadesApostolica.UI.Registros
                 paso = false;
             }
             return paso;
-        }   
+        }
 
         private bool ValidarDetalle()
         {
             bool paso = true;
 
             if (string.IsNullOrWhiteSpace(AgregarButton.Text))
-                {
+            {
 
                 MyErrorProvider.SetError(AgregarButton, "Tiene que agregar algo");
                 AgregarButton.Focus();
@@ -131,7 +131,7 @@ namespace ActividadesApostolica.UI.Registros
         }
 
 
-            private void rAsistencias_Load(object sender, EventArgs e)
+        private void rAsistencias_Load(object sender, EventArgs e)
         {
             LlenarComboActividades();
             LlenarComboPersonas();
