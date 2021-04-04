@@ -156,7 +156,7 @@ namespace ActividadesApostolica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ActividadesApostolica.Properties.Resources.art01;
+            this.BackgroundImage = global::ActividadesApostolica.Properties.Resources.bde58c62c199ef417246d83d72b92410;
             this.ClientSize = new System.Drawing.Size(1162, 606);
             this.Controls.Add(this.MenuStrip);
             this.IsMdiContainer = true;
