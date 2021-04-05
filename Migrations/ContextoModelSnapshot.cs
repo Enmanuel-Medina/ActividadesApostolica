@@ -233,7 +233,7 @@ namespace ActividadesApostolica.Migrations
                             ClaveUsuario = "admin",
                             Direccion = "Admin",
                             Email = "Admin@hotmail.com",
-                            Fecha = new DateTime(2021, 4, 4, 14, 46, 49, 378, DateTimeKind.Local).AddTicks(4387),
+                            Fecha = new DateTime(2021, 4, 5, 15, 28, 13, 637, DateTimeKind.Local).AddTicks(8694),
                             NombreUsuario = "Admin",
                             Nombres = "Admin",
                             Telefono = "0123456789",
